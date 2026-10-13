@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meridian Financial | TPRM AI Risk & Governance Intelligence Platform</title>
+  <meta name="description" content="Meridian Financial Institution Case Study 1 — Third-Party AI Risk Management, 4th-Party Supply Chain Concentration, and Governance Action Platform.">
+  
+  <!-- Modern Typography from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background ambient glow effects -->
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+
+  <!-- Primary Application Wrapper -->
+  <div id="app" class="app-container">
+
+    <!-- Top Navigation Bar -->
+    <header id="main-header" class="site-header">
+      <div class="header-left">
+        <div class="brand-logo" id="brand-logo-btn">
+          <div class="logo-shield">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M12 8v4"/>
+              <path d="M12 16h.01"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">MERIDIAN</span>
+            <span class="brand-tag">FINANCIAL RISK INTELLIGENCE</span>
+          </div>
+        </div>
+
+        <div class="header-badge" id="header-status-badge">
+          <span class="status-pulse"></span>
+          <span>Case Study 1 • TPRM AI Governance Deliverable</span>
+        </div>
+      </div>
+
+      <div class="header-center">
+        <!-- Global Search Bar with Hotkey -->
+        <div class="global-search-wrapper" id="global-search-container">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="global-search-input" placeholder="Search vendors, models, risks, or services (Ctrl+K)..." autocomplete="off" />
+          <kbd class="search-kbd" id="search-kbd-hint">Ctrl K</kbd>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" class="icon-button" title="Toggle Light / Dark Mode" aria-label="Toggle theme">
+          <svg id="theme-icon-moon" class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="theme-icon-sun" class="theme-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Export / Print Mode Button -->
+        <button id="export-print-btn" class="btn btn-secondary" title="Export Executive PDF / Print Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print / PDF</span>
+        </button>
+
+        <!-- Download Excel Workbook -->
+        <a id="download-excel-link" href="Meridian_Vendor_Input.xlsx" download="Meridian_Vendor_Input.xlsx" class="btn btn-primary" title="Download Final Populated Excel Workbook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download Excel</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Banner with Cyber Risk Graphic -->
+    <section id="hero-banner" class="hero-section">
+      <div class="hero-content">
+        <div class="hero-tag">ENTERPRISE TPRM INTELLIGENCE</div>
+        <h1 class="hero-title">Third-Party AI Footprint & Supply Chain Risk Platform</h1>
+        <p class="hero-description">
+          Open Source Intelligence (OSINT) and risk tiering analysis across Meridian's core platforms, payment infrastructure, and enterprise automation vendors. Real-time governance visibility for the Third-Party Risk Committee & CISO.
+        </p>
+        <div class="hero-meta-strip">
+          <div class="meta-item">
+            <span class="meta-label">Target Institution:</span>
+            <span class="meta-value">Meridian Financial Institution</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Evaluation Scope:</span>
+            <span class="meta-value">6 In-Scope Vendors + 1 Benchmark Reference</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Workbook Status:</span>
+            <span class="meta-value highlight-green">Columns L–V Finalized & Formatted</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Date:</span>
+            <span class="meta-value">13-Oct-2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-graphic-card">
+        <img src="meridian_hero_banner.jpg" alt="Meridian Enterprise Risk Shield" class="hero-banner-img" />
+        <div class="hero-img-badge">AI Surveillance Active</div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav id="main-navigation-tabs" class="tab-navigation-bar" role="tablist">
+      <button class="nav-tab active" data-tab="tab-command-center" id="tab-btn-command-center" role="tab" aria-selected="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>Command Center</span>
+      </button>
+
+      <button class="nav-tab" data-tab="tab-risk-matrix" id="tab-btn-risk-matrix" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span>Interactive Risk Matrix</span>
+      </button>
+
+      <button class="nav-tab" data-tab="tab-vendor-inventory" id="tab-btn-vendor-inventory" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>Vendor Inventory & Dossiers</span>
+      </button>
+
+      <button class="nav-tab" data-tab="tab-supply-chain" id="tab-btn-supply-chain" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+        <span>4th-Party Model Supply Chain</span>
+      </button>
+
+      <button class="nav-tab" data-tab="tab-governance-roadmap" id="tab-btn-governance-roadmap" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 11 12 14 22 4"></polyline>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+        </svg>
+        <span>Governance Action Tracker</span>
+        <span class="tab-badge" id="pending-actions-badge">2 Urgent</span>
+      </button>
+
+      <button class="nav-tab" data-tab="tab-osint-methodology" id="tab-btn-osint-methodology" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>Methodology & OSINT Sources</span>
+      </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="content-viewport">
+
+      <!-- ================= TAB 1: COMMAND CENTER ================= -->
+      <section id="tab-command-center" class="tab-pane active" role="tabpanel">
+        
+        <!-- KPI Metrics Grid -->
+        <div class="kpi-grid">
+          
+          <div class="kpi-card" id="kpi-card-vendors">
+            <div class="kpi-icon-wrap icon-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <span class="kpi-label">TOTAL EVALUATED VENDORS</span>
+              <div class="kpi-value-row">
+                <span class="kpi-value">7</span>
+                <span class="kpi-sub">6 In-Scope + 1 Benchmark</span>
+              </div>
+              <div class="kpi-status-tag">100% Student Columns Populated</div>
+            </div>
+          </div>
+
+          <div class="kpi-card" id="kpi-card-critical-tier">
+            <div class="kpi-icon-wrap icon-red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <span class="kpi-label">CRITICAL OPERATIONAL TIER</span>
+              <div class="kpi-value-row">
+                <span class="kpi-value">4</span>
+                <span class="kpi-sub">57% of Portfolio</span>
+              </div>
+              <div class="kpi-status-tag highlight-red-tag">Fiserv, BNY, TCH, Larkspur</div>
+            </div>
+          </div>
+
+          <div class="kpi-card" id="kpi-card-ai-detected">
+            <div class="kpi-icon-wrap icon-cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <span class="kpi-label">AI USAGE DETECTED</span>
+              <div class="kpi-value-row">
+                <span class="kpi-value">4</span>
+                <span class="kpi-sub">Active Public AI Footprint</span>
+              </div>
+              <div class="kpi-status-tag highlight-cyan-tag">Fiserv, BNY, AutomWorx, Larkspur</div>
+            </div>
+          </div>
+
+          <div class="kpi-card" id="kpi-card-high-critical-risk">
+            <div class="kpi-icon-wrap icon-orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <span class="kpi-label">CRITICAL / HIGH AI RISK</span>
+              <div class="kpi-value-row">
+                <span class="kpi-value">3</span>
+                <span class="kpi-sub">Requires Direct Escalation</span>
+              </div>
+              <div class="kpi-status-tag highlight-orange-tag">Fiserv, AutomWorx, BNY</div>
+            </div>
+          </div>
+
+          <div class="kpi-card" id="kpi-card-subprocessors">
+            <div class="kpi-icon-wrap icon-purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <span class="kpi-label">4TH-PARTY AI PROVIDERS</span>
+              <div class="kpi-value-row">
+                <span class="kpi-value">4</span>
+                <span class="kpi-sub">Upstream Supply Chain</span>
+              </div>
+              <div class="kpi-status-tag highlight-purple-tag">OpenAI, Microsoft, Google, Broadcom</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Executive Alert Callout -->
+        <div class="alert-banner alert-critical" id="executive-critical-callout">
+          <div class="alert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="alert-content">
+            <div class="alert-header">
+              <h3 class="alert-title">Priority CISO Escalation: Core Platform & Payment Rail AI Exposure</h3>
+              <span class="badge badge-urgent">Immediate Action Mandated</span>
+            </div>
+            <p class="alert-text">
+              <strong>Fiserv (V-002)</strong> has deployed autonomous agentic workflows via <code>agentOS</code> with direct foundation model integration (OpenAI & Microsoft Azure) accessing the full core banking customer master (1.4M records, 240M transactions). Additionally, <strong>BNY (V-005)</strong> utilizes Google Gemini Enterprise and Microsoft Azure across Real-Time Payments (RTP) transmission pipelines handling 2.1M messages. Immediate DPA audits, zero-retention contractual verifications, and CISO escalations are required within 15–30 days.
+            </p>
+          </div>
+          <button class="btn btn-sm btn-outline-danger" onclick="window.app.openDossier('V-002')">Inspect Fiserv Dossier</button>
+        </div>
+
+        <!-- Two Column Dashboard Breakdown -->
+        <div class="grid-2-col">
+          
+          <!-- Left Column: Risk Distribution & Breakdown -->
+          <div class="glass-card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                  <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                </svg>
+                AI Adoption & Footprint Distribution
+              </h3>
+              <span class="card-badge">OSINT Sweep Results</span>
+            </div>
+
+            <div class="chart-summary-container">
+              <div class="distribution-bars">
+                
+                <div class="dist-bar-item">
+                  <div class="dist-bar-header">
+                    <span class="dist-label"><span class="indicator-dot green"></span>Active AI Usage (Detected)</span>
+                    <span class="dist-val">4 Vendors (57%)</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill green" style="width: 57%;"></div>
+                  </div>
+                  <div class="dist-vendors-list">Fiserv, BNY, AutomWorx, Larkspur</div>
+                </div>
+
+                <div class="dist-bar-item">
+                  <div class="dist-bar-header">
+                    <span class="dist-label"><span class="indicator-dot red"></span>No Public AI Detected (Deterministic)</span>
+                    <span class="dist-val">2 Vendors (29%)</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill red" style="width: 29%;"></div>
+                  </div>
+                  <div class="dist-vendors-list">FSSI (Print & Tax), The Clearing House (ACH/RTP)</div>
+                </div>
+
+                <div class="dist-bar-item">
+                  <div class="dist-bar-header">
+                    <span class="dist-label"><span class="indicator-dot yellow"></span>Data Pipeline / Inconclusive</span>
+                    <span class="dist-val">1 Vendor (14%)</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill yellow" style="width: 14%;"></div>
+                  </div>
+                  <div class="dist-vendors-list">Terrapin Technologies (AI-readiness marketing)</div>
+                </div>
+
+              </div>
+
+              <div class="analytical-takeaway-box">
+                <div class="takeaway-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                  Key Analytical Takeaway
+                </div>
+                <p>
+                  Deterministic payment switches (TCH) and regulatory document printers (FSSI) show <strong>zero AI usage</strong> in core transactional flows. However, application-level enterprise suites (Fiserv, BNY, AutomWorx) are aggressively embedding GenAI copilots and autonomous multi-agent systems, creating severe 4th-party model supply chain opacity.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: 4th-Party Model Supply Chain Concentration -->
+          <div class="glass-card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                4th-Party Model Concentration Exposure
+              </h3>
+              <span class="card-badge">Systemic Concentration</span>
+            </div>
+
+            <div class="subprocessors-grid">
+              
+              <div class="subprocessor-item">
+                <div class="sub-logo-row">
+                  <div class="sub-badge sub-azure">Microsoft (Azure OpenAI / Foundry)</div>
+                  <span class="sub-count">2 Direct Vendors</span>
+                </div>
+                <div class="sub-vendors">
+                  <span class="vendor-tag" onclick="window.app.openDossier('V-002')">Fiserv (DNA / agentOS)</span>
+                  <span class="vendor-tag" onclick="window.app.openDossier('V-005')">BNY (Internal Copilot)</span>
+                </div>
+                <p class="sub-impact">
+                  Critical systemic concentration: Azure hosts both core platform account models and payment exception handling copilots.
+                </p>
+              </div>
+
+              <div class="subprocessor-item">
+                <div class="sub-logo-row">
+                  <div class="sub-badge sub-openai">OpenAI (agentOS / Foundation Models)</div>
+                  <span class="sub-count">1 Core Vendor</span>
+                </div>
+                <div class="sub-vendors">
+                  <span class="vendor-tag" onclick="window.app.openDossier('V-002')">Fiserv, Inc. (DNA Platform)</span>
+                </div>
+                <p class="sub-impact">
+                  Direct frontier model access to 1.4M customer records and 240M annual transactions. Demands zero-data-retention DPA review.
+                </p>
+              </div>
+
+              <div class="subprocessor-item">
+                <div class="sub-logo-row">
+                  <div class="sub-badge sub-google">Google Cloud (Gemini Enterprise)</div>
+                  <span class="sub-count">1 Critical Vendor</span>
+                </div>
+                <div class="sub-vendors">
+                  <span class="vendor-tag" onclick="window.app.openDossier('V-005')">BNY (Eliza OS & Payments)</span>
+                </div>
+                <p class="sub-impact">
+                  Powers multimodal multi-agent research and payment validations over 2.1M instant RTP messages.
+                </p>
+              </div>
+
+              <div class="subprocessor-item">
+                <div class="sub-logo-row">
+                  <div class="sub-badge sub-broadcom">Broadcom / BYOM (Model Context Protocol)</div>
+                  <span class="sub-count">1 High Vendor</span>
+                </div>
+                <div class="sub-vendors">
+                  <span class="vendor-tag" onclick="window.app.openDossier('V-001')">AutomWorx (Automic V26)</span>
+                </div>
+                <p class="sub-impact">
+                  BYOM framework allows external LLM agents to parse privileged enterprise batch schedules, logs, and service credentials.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ================= TAB 2: INTERACTIVE RISK MATRIX ================= -->
+      <section id="tab-risk-matrix" class="tab-pane" role="tabpanel">
+        <div class="section-intro">
+          <div>
+            <h2 class="section-title">Meridian 2D Risk Heatmap & Assessment Matrix</h2>
+            <p class="section-subtitle">
+              Visualizes the intersection of <strong>Operational Criticality</strong> (disruption impact to Meridian) and <strong>AI Security Risk</strong> (model hallucination, data exposure, prompt injection, and unauthorized sub-processor transmission).
+            </p>
+          </div>
+          <div class="matrix-legend-pills">
+            <span class="legend-pill red-zone">Catastrophic / Priority Action</span>
+            <span class="legend-pill orange-zone">Elevated AI Exposure</span>
+            <span class="legend-pill yellow-zone">Monitored / Targeted</span>
+            <span class="legend-pill green-zone">Deterministic / Controlled</span>
+          </div>
+        </div>
+
+        <!-- 2D Matrix Container -->
+        <div class="matrix-card-wrap">
+          <div class="matrix-container" id="matrix-grid-element">
+            <!-- Y Axis Label -->
+            <div class="matrix-y-axis-label">OPERATIONAL CRITICALITY TIER &rarr;</div>
+            
+            <div class="matrix-table-wrapper">
+              <table class="risk-matrix-table">
+                <thead>
+                  <tr>
+                    <th class="matrix-corner-th">Criticality \ AI Risk</th>
+                    <th>Critical AI Risk</th>
+                    <th>High AI Risk</th>
+                    <th>Low AI Risk</th>
+                    <th>None Identified</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1: Operational Critical -->
+                  <tr>
+                    <td class="matrix-row-header tier-critical">
+                      <div class="row-tier-name">CRITICAL</div>
+                      <div class="row-tier-desc">Halts operations, full customer impact</div>
+                    </td>
+                    <td class="matrix-cell cell-catastrophic" id="cell-critical-critical">
+                      <div class="cell-zone-tag">CATASTROPHIC ZONE</div>
+                      <div class="cell-vendor-list">
+                        <div class="matrix-vendor-pill" onclick="window.app.openDossier('V-002')">
+                          <span class="p-id">V-002</span>
+                          <span class="p-name">Fiserv, Inc.</span>
+                          <span class="p-tag">agentOS / OpenAI</span>
+                        </div>
+                        <div class="matrix-vendor-pill benchmark-pill" onclick="window.app.openDossier('V-000')">
+                          <span class="p-id">V-000</span>
+                          <span class="p-name">Larkspur (Benchmark)</span>
+                          <span class="p-tag">Servicing</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="matrix-cell cell-severe" id="cell-critical-high">
+                      <div class="cell-zone-tag">SEVERE ZONE</div>
+                      <div class="cell-vendor-list">
+                        <div class="matrix-vendor-pill" onclick="window.app.openDossier('V-005')">
+                          <span class="p-id">V-005</span>
+                          <span class="p-name">BNY</span>
+                          <span class="p-tag">Eliza / Gemini</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="matrix-cell cell-empty">
+                      <span class="empty-cell-label">—</span>
+                    </td>
+                    <td class="matrix-cell cell-controlled-critical" id="cell-critical-none">
+                      <div class="cell-zone-tag">CONTROLLED SYSTEMIC</div>
+                      <div class="cell-vendor-list">
+                        <div class="matrix-vendor-pill" onclick="window.app.openDossier('V-006')">
+                          <span class="p-id">V-006</span>
+                          <span class="p-name">The Clearing House</span>
+                          <span class="p-tag">Deterministic Rail</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2: Operational High -->
+                  <tr>
+                    <td class="matrix-row-header tier-high">
+                      <div class="row-tier-name">HIGH</div>
+                      <div class="row-tier-desc">Privileged access or regulatory filing</div>
+                    </td>
+                    <td class="matrix-cell cell-empty">
+                      <span class="empty-cell-label">—</span>
+                    </td>
+                    <td class="matrix-cell cell-elevated" id="cell-high-high">
+                      <div class="cell-zone-tag">HIGH SURVEILLANCE</div>
+                      <div class="cell-vendor-list">
+                        <div class="matrix-vendor-pill" onclick="window.app.openDossier('V-001')">
+                          <span class="p-id">V-001</span>
+                          <span class="p-name">AutomWorx</span>
+                          <span class="p-tag">BYOM / MCP</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="matrix-cell cell-empty">
+                      <span class="empty-cell-label">—</span>
+                    </td>
+                    <td class="matrix-cell cell-guarded" id="cell-high-none">
+                      <div class="cell-zone-tag">DATA OVERSIGHT</div>
+                      <div class="cell-vendor-list">
+                        <div class="matrix-vendor-pill" onclick="window.app.openDossier('V-003')">
+                          <span class="p-id">V-003</span>
+                          <span class="p-name">FSSI</span>
+                          <span class="p-tag">Rule-based Print</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3: Operational Medium -->
+                  <tr>
+                    <td class="matrix-row-header tier-medium">
+                      <div class="row-tier-name">MEDIUM</div>
+                      <div class="row-tier-desc">Internal reporting, batch monthly cycle</div>
+                    </td>
+                    <td class="matrix-cell cell-empty"><span class="empty-cell-label">—</span></td>
+                    <td class="matrix-cell cell-empty"><span class="empty-cell-label">—</span></td>
+                    <td class="matrix-cell cell-low" id="cell-medium-low">
+                      <div class="cell-zone-tag">LOW EXPOSURE</div>
+                      <div class="cell-vendor-list">
+                        <div class="matrix-vendor-pill" onclick="window.app.openDossier('V-004')">
+                          <span class="p-id">V-004</span>
+                          <span class="p-name">Terrapin Tech</span>
+                          <span class="p-tag">Inconclusive Pipeline</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="matrix-cell cell-empty"><span class="empty-cell-label">—</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="matrix-x-axis-label">AI SECURITY RISK CLASSIFICATION &rarr;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytical Rationale Behind Matrix Placements -->
+        <div class="matrix-insights-grid">
+          <div class="insight-box">
+            <h4>🔴 Fiserv & BNY: The Convergent Threat</h4>
+            <p>
+              Both occupy the top operational criticality tiers handling Meridian's core banking and instant payments. Because both integrate frontier LLMs (OpenAI, Gemini, Azure) into operational automation, they present the largest systemic risk of unauthorized model training or non-deterministic balance actions.
+            </p>
+          </div>
+          <div class="insight-box">
+            <h4>🟡 AutomWorx: Privileged Pipeline Exposure</h4>
+            <p>
+              While AutomWorx has no direct customer PII, its consultants hold privileged production credentials and batch schedules. Enabling external LLM models via Model Context Protocol (MCP) creates prompt injection risks that could compromise enterprise infrastructure.
+            </p>
+          </div>
+          <div class="insight-box">
+            <h4>🟢 The Clearing House & FSSI: Deterministic Safety</h4>
+            <p>
+              Both handle sensitive data or national infrastructure (ACH, RTP, 19M tax documents). However, their core services run entirely on deterministic ISO 20022 protocols and rule-based composition, resulting in <strong>zero AI security exposure</strong> today.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB 3: VENDOR INVENTORY & DOSSIERS ================= -->
+      <section id="tab-vendor-inventory" class="tab-pane" role="tabpanel">
+        
+        <!-- Filter and Search Toolbar -->
+        <div class="inventory-toolbar">
+          <div class="toolbar-left">
+            
+            <!-- Criticality Filter -->
+            <div class="filter-group">
+              <label for="filter-tier" class="filter-label">Criticality Tier:</label>
+              <select id="filter-tier" class="filter-select">
+                <option value="ALL">All Tiers (7)</option>
+                <option value="Critical">Critical (4)</option>
+                <option value="High">High (2)</option>
+                <option value="Medium">Medium (1)</option>
+              </select>
+            </div>
+
+            <!-- AI Usage Filter -->
+            <div class="filter-group">
+              <label for="filter-ai" class="filter-label">AI Usage Detected:</label>
+              <select id="filter-ai" class="filter-select">
+                <option value="ALL">All AI States (7)</option>
+                <option value="Yes">Detected / Yes (4)</option>
+                <option value="No">No AI Detected (2)</option>
+                <option value="Inconclusive">Inconclusive (1)</option>
+              </select>
+            </div>
+
+            <!-- AI Risk Filter -->
+            <div class="filter-group">
+              <label for="filter-risk" class="filter-label">AI Security Risk:</label>
+              <select id="filter-risk" class="filter-select">
+                <option value="ALL">All Risk Levels (7)</option>
+                <option value="Critical">Critical Risk</option>
+                <option value="High">High Risk</option>
+                <option value="Low">Low Risk</option>
+                <option value="None identified">None Identified</option>
+              </select>
+            </div>
+
+            <!-- Reset Filters -->
+            <button id="reset-filters-btn" class="btn btn-outline" title="Reset all filters">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+              </svg>
+              <span>Reset</span>
+            </button>
+          </div>
+
+          <div class="toolbar-right">
+            <!-- View Toggle: Cards vs Table -->
+            <div class="view-toggle-wrap">
+              <button id="view-mode-cards" class="view-btn active" title="Grid View">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </button>
+              <button id="view-mode-table" class="view-btn" title="Detailed Table View">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+
+            <div class="inventory-counter" id="inventory-counter">
+              Showing <strong id="counter-count">7</strong> of 7 vendors
+            </div>
+          </div>
+        </div>
+
+        <!-- Vendor Cards Grid View -->
+        <div id="vendor-cards-container" class="vendor-cards-grid">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <!-- Vendor Table View (Hidden by default, toggled via button) -->
+        <div id="vendor-table-container" class="vendor-table-view hidden">
+          <div class="table-responsive">
+            <table class="inventory-data-table" id="inventory-data-table">
+              <thead>
+                <tr>
+                  <th>Vendor ID</th>
+                  <th>Vendor Name</th>
+                  <th>Category</th>
+                  <th>Operational Criticality</th>
+                  <th>Data Volume / Annual</th>
+                  <th>AI Usage Detected</th>
+                  <th>4th-Party Model Providers</th>
+                  <th>AI Risk Classification</th>
+                  <th>Governance Urgency</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="inventory-table-body">
+                <!-- Dynamically populated by app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= TAB 4: 4TH-PARTY SUPPLY CHAIN NETWORK ================= -->
+      <section id="tab-supply-chain" class="tab-pane" role="tabpanel">
+        <div class="section-intro">
+          <div>
+            <h2 class="section-title">4th-Party AI Model & Cloud Supply Chain Topology</h2>
+            <p class="section-subtitle">
+              Visualizes how Meridian's banking operations flow through Tier-1 vendors into downstream frontier AI models, cloud infrastructures, and LLM sub-processors.
+            </p>
+          </div>
+          <div class="topology-legend">
+            <span class="topo-pill dot-red">High / Critical AI Risk Path</span>
+            <span class="topo-pill dot-amber">High Governance Surveillance</span>
+            <span class="topo-pill dot-green">Deterministic (No Model)</span>
+          </div>
+        </div>
+
+        <!-- Interactive SVG Topology Graph -->
+        <div class="topology-container-card">
+          <div class="svg-diagram-wrapper">
+            <svg id="supply-chain-svg" viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid meet" class="topology-svg">
+              <defs>
+                <!-- Glowing linear gradients -->
+                <linearGradient id="grad-meridian" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0ea5e9" />
+                  <stop offset="100%" stop-color="#2563eb" />
+                </linearGradient>
+                <linearGradient id="grad-crit" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ef4444" />
+                  <stop offset="100%" stop-color="#991b1b" />
+                </linearGradient>
+                <linearGradient id="grad-high" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f59e0b" />
+                  <stop offset="100%" stop-color="#d97706" />
+                </linearGradient>
+                <linearGradient id="grad-sub" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#8b5cf6" />
+                  <stop offset="100%" stop-color="#6366f1" />
+                </linearGradient>
+
+                <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              <!-- Connection Lines (Tier 1: Meridian to Primary Vendors) -->
+              <!-- To Fiserv -->
+              <path d="M 180 310 C 270 310, 290 120, 380 120" class="conn-line conn-danger" stroke-width="2.5" />
+              <!-- To BNY -->
+              <path d="M 180 310 C 270 310, 290 200, 380 200" class="conn-line conn-danger" stroke-width="2.5" />
+              <!-- To AutomWorx -->
+              <path d="M 180 310 C 270 310, 290 280, 380 280" class="conn-line conn-warning" stroke-width="2.5" />
+              <!-- To Terrapin -->
+              <path d="M 180 310 C 270 310, 290 360, 380 360" class="conn-line conn-neutral" stroke-width="2" />
+              <!-- To FSSI -->
+              <path d="M 180 310 C 270 310, 290 440, 380 440" class="conn-line conn-safe" stroke-width="2" />
+              <!-- To The Clearing House -->
+              <path d="M 180 310 C 270 310, 290 520, 380 520" class="conn-line conn-safe" stroke-width="2" />
+
+              <!-- Connection Lines (Tier 2: Primary Vendors to 4th-Party Model Providers) -->
+              <!-- Fiserv to OpenAI -->
+              <path d="M 540 120 C 620 120, 640 140, 720 140" class="conn-line conn-danger" stroke-width="2.5" />
+              <!-- Fiserv to Microsoft Azure -->
+              <path d="M 540 120 C 620 120, 640 240, 720 240" class="conn-line conn-danger" stroke-width="2.5" />
+              <!-- BNY to Google Cloud Gemini -->
+              <path d="M 540 200 C 620 200, 640 340, 720 340" class="conn-line conn-warning" stroke-width="2.5" />
+              <!-- BNY to Microsoft Azure -->
+              <path d="M 540 200 C 620 200, 640 240, 720 240" class="conn-line conn-warning" stroke-width="2.5" />
+              <!-- AutomWorx to Broadcom BYOM / MCP -->
+              <path d="M 540 280 C 620 280, 640 440, 720 440" class="conn-line conn-warning" stroke-width="2" />
+
+              <!-- HUB: Meridian Financial -->
+              <g class="node-group" transform="translate(60, 255)">
+                <rect x="0" y="0" width="130" height="110" rx="14" fill="url(#grad-meridian)" class="node-box hub-node" filter="url(#glow-effect)" />
+                <text x="65" y="40" text-anchor="middle" fill="#ffffff" font-weight="700" font-size="13">MERIDIAN</text>
+                <text x="65" y="58" text-anchor="middle" fill="#e0f2fe" font-size="10">Financial Institution</text>
+                <text x="65" y="78" text-anchor="middle" fill="#bae6fd" font-size="9">1.4M Retail Master</text>
+                <text x="65" y="92" text-anchor="middle" fill="#bae6fd" font-size="9">RTP & ACH Rails</text>
+              </g>
+
+              <!-- TIER 1 VENDORS -->
+              <!-- Fiserv -->
+              <g class="node-group clickable-node" transform="translate(380, 95)" onclick="window.app.openDossier('V-002')">
+                <rect x="0" y="0" width="160" height="50" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="2" class="node-box" />
+                <text x="12" y="22" fill="#ffffff" font-weight="600" font-size="12">V-002 Fiserv (DNA)</text>
+                <text x="12" y="38" fill="#f87171" font-size="10">Core Banking • 1.4M PII</text>
+              </g>
+
+              <!-- BNY -->
+              <g class="node-group clickable-node" transform="translate(380, 175)" onclick="window.app.openDossier('V-005')">
+                <rect x="0" y="0" width="160" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2" class="node-box" />
+                <text x="12" y="22" fill="#ffffff" font-weight="600" font-size="12">V-005 BNY (Payments)</text>
+                <text x="12" y="38" fill="#fbbf24" font-size="10">RTP Inbound • 2.1M Msgs</text>
+              </g>
+
+              <!-- AutomWorx -->
+              <g class="node-group clickable-node" transform="translate(380, 255)" onclick="window.app.openDossier('V-001')">
+                <rect x="0" y="0" width="160" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2" class="node-box" />
+                <text x="12" y="22" fill="#ffffff" font-weight="600" font-size="12">V-001 AutomWorx</text>
+                <text x="12" y="38" fill="#fbbf24" font-size="10">Batch Sched. • Credentials</text>
+              </g>
+
+              <!-- Terrapin -->
+              <g class="node-group clickable-node" transform="translate(380, 335)" onclick="window.app.openDossier('V-004')">
+                <rect x="0" y="0" width="160" height="50" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1.5" class="node-box" />
+                <text x="12" y="22" fill="#ffffff" font-weight="600" font-size="12">V-004 Terrapin Tech</text>
+                <text x="12" y="38" fill="#94a3b8" font-size="10">Wealth ETL • 38k Clients</text>
+              </g>
+
+              <!-- FSSI -->
+              <g class="node-group clickable-node" transform="translate(380, 415)" onclick="window.app.openDossier('V-003')">
+                <rect x="0" y="0" width="160" height="50" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5" class="node-box" />
+                <text x="12" y="22" fill="#ffffff" font-weight="600" font-size="12">V-003 FSSI (Statements)</text>
+                <text x="12" y="38" fill="#34d399" font-size="10">19M Documents • Rule-based</text>
+              </g>
+
+              <!-- The Clearing House -->
+              <g class="node-group clickable-node" transform="translate(380, 495)" onclick="window.app.openDossier('V-006')">
+                <rect x="0" y="0" width="160" height="50" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5" class="node-box" />
+                <text x="12" y="22" fill="#ffffff" font-weight="600" font-size="12">V-006 The Clearing House</text>
+                <text x="12" y="38" fill="#34d399" font-size="10">ACH/RTP Rail • 14M Msgs</text>
+              </g>
+
+              <!-- TIER 2: 4TH-PARTY MODEL PROVIDERS -->
+              <!-- OpenAI -->
+              <g class="node-group" transform="translate(720, 115)">
+                <rect x="0" y="0" width="220" height="60" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="2" class="node-box" />
+                <text x="14" y="24" fill="#a5b4fc" font-weight="700" font-size="12">OpenAI (agentOS)</text>
+                <text x="14" y="40" fill="#cbd5e1" font-size="10">Direct Core Database Hook</text>
+                <text x="14" y="52" fill="#f87171" font-size="9 font-weight-600">Zero-Retention DPA Verification Needed</text>
+              </g>
+
+              <!-- Microsoft Azure OpenAI & Foundry -->
+              <g class="node-group" transform="translate(720, 215)">
+                <rect x="0" y="0" width="220" height="60" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="2" class="node-box" />
+                <text x="14" y="24" fill="#a5b4fc" font-weight="700" font-size="12">Microsoft Azure & Copilot</text>
+                <text x="14" y="40" fill="#cbd5e1" font-size="10">Dual Impact: Fiserv + BNY</text>
+                <text x="14" y="52" fill="#fbbf24" font-size="9">Tenant Model Isolation Audit Required</text>
+              </g>
+
+              <!-- Google Cloud Gemini Enterprise -->
+              <g class="node-group" transform="translate(720, 315)">
+                <rect x="0" y="0" width="220" height="60" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="2" class="node-box" />
+                <text x="14" y="24" fill="#a5b4fc" font-weight="700" font-size="12">Google Cloud (Gemini)</text>
+                <text x="14" y="40" fill="#cbd5e1" font-size="10">Multi-Agent Workflow Automation</text>
+                <text x="14" y="52" fill="#fbbf24" font-size="9">BNY Eliza Platform Multi-Agent Rail</text>
+              </g>
+
+              <!-- Broadcom BYOM / MCP -->
+              <g class="node-group" transform="translate(720, 415)">
+                <rect x="0" y="0" width="220" height="60" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="2" class="node-box" />
+                <text x="14" y="24" fill="#a5b4fc" font-weight="700" font-size="12">Broadcom BYOM / MCP</text>
+                <text x="14" y="40" fill="#cbd5e1" font-size="10">Model Context Protocol Agents</text>
+                <text x="14" y="52" fill="#fbbf24" font-size="9">Automated Job Parsing & Log Analysis</text>
+              </g>
+
+            </svg>
+          </div>
+          <div class="diagram-caption">
+            <strong>Systemic Takeaway:</strong> Microsoft Azure and OpenAI represent high-concentration systemic nodes in Meridian's external AI supply chain. Outages, security flaws, or unauthorized data retention in either provider directly compromise Meridian's core banking and real-time payments resilience.
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB 5: GOVERNANCE ACTION TRACKER ================= -->
+      <section id="tab-governance-roadmap" class="tab-pane" role="tabpanel">
+        <div class="section-intro">
+          <div>
+            <h2 class="section-title">TPRM Committee & CISO Governance Action Tracker</h2>
+            <p class="section-subtitle">
+              Interactive execution checklist derived from Column U (Recommended Action) of the verified workbook. Track milestone deadlines, contract addenda, and risk committee escalations.
+            </p>
+          </div>
+          <div class="tracker-progress-summary">
+            <span class="progress-label">Action Completion Progress:</span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-inner" id="action-progress-bar" style="width: 25%;"></div>
+            </div>
+            <span class="progress-percent" id="action-progress-text">2 of 8 Actions Closed</span>
+          </div>
+        </div>
+
+        <div class="action-columns-grid">
+          
+          <!-- Category 1: Urgent 15-Day Milestone -->
+          <div class="action-card urgent-card">
+            <div class="action-card-header">
+              <div class="action-badge-pill pill-urgent">URGENT (15-DAY MILESTONE)</div>
+              <h3>Immediate Technical Escalations</h3>
+            </div>
+            
+            <div class="action-items-list" id="urgent-actions-list">
+              
+              <div class="action-item" data-action-id="act-1">
+                <label class="custom-checkbox">
+                  <input type="checkbox" class="action-check" data-action-id="act-1">
+                  <span class="checkmark"></span>
+                </label>
+                <div class="action-item-content">
+                  <div class="action-item-title">
+                    <strong>Fiserv (V-002):</strong> Issue Formal AI Architecture & DPA Review
+                    <span class="deadline-badge">Due: 28-Oct-2026</span>
+                  </div>
+                  <p class="action-item-desc">
+                    Demand written verification of agentOS controls: zero-data retention commitments from OpenAI/Microsoft, encryption in transit/rest, and mandatory human-in-the-loop gates prior to agentic account modifications.
+                  </p>
+                  <div class="action-owner">Owner: CISO & TPRM Lead</div>
+                </div>
+              </div>
+
+              <div class="action-item" data-action-id="act-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" class="action-check" data-action-id="act-2">
+                  <span class="checkmark"></span>
+                </label>
+                <div class="action-item-content">
+                  <div class="action-item-title">
+                    <strong>AutomWorx (V-001):</strong> Issue Targeted External LLM Questionnaire
+                    <span class="deadline-badge">Due: 28-Oct-2026</span>
+                  </div>
+                  <p class="action-item-desc">
+                    Verify whether consultants or managed support tooling ingest Meridian batch execution logs, scripts, or credentials into external LLM/MCP assistants. Establish immediate contract ban on proprietary script ingestion.
+                  </p>
+                  <div class="action-owner">Owner: Infrastructure & Vendor Security</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Category 2: 30-Day Contractual & Model Audits -->
+          <div class="action-card high-card">
+            <div class="action-card-header">
+              <div class="action-badge-pill pill-high">30-DAY MILESTONE</div>
+              <h3>Contractual & Sub-processor Verifications</h3>
+            </div>
+            
+            <div class="action-items-list" id="high-actions-list">
+              
+              <div class="action-item" data-action-id="act-3">
+                <label class="custom-checkbox">
+                  <input type="checkbox" class="action-check" data-action-id="act-3">
+                  <span class="checkmark"></span>
+                </label>
+                <div class="action-item-content">
+                  <div class="action-item-title">
+                    <strong>BNY (V-005):</strong> Request Global Payments AI Governance Briefing
+                    <span class="deadline-badge">Due: 12-Nov-2026</span>
+                  </div>
+                  <p class="action-item-desc">
+                    Confirm that payment instructions and counterparty account data flowing through the RTP transmission rail remain isolated from external LLM model training and generative research agents on the Eliza platform.
+                  </p>
+                  <div class="action-owner">Owner: Payments Operations & Legal</div>
+                </div>
+              </div>
+
+              <div class="action-item" data-action-id="act-4">
+                <label class="custom-checkbox">
+                  <input type="checkbox" class="action-check" data-action-id="act-4">
+                  <span class="checkmark"></span>
+                </label>
+                <div class="action-item-content">
+                  <div class="action-item-title">
+                    <strong>Fiserv (V-002):</strong> Amend Master Services Agreement (MSA)
+                    <span class="deadline-badge">Due: 12-Nov-2026</span>
+                  </div>
+                  <p class="action-item-desc">
+                    Mandate advance 60-day written notification before activating autonomous agent features on Meridian's DNA tenant. Escalate to Meridian's Third-Party Risk Committee.
+                  </p>
+                  <div class="action-owner">Owner: General Counsel & TPRM Committee</div>
+                </div>
+              </div>
+
+              <div class="action-item" data-action-id="act-5">
+                <label class="custom-checkbox">
+                  <input type="checkbox" class="action-check" data-action-id="act-5">
+                  <span class="checkmark"></span>
+                </label>
+                <div class="action-item-content">
+                  <div class="action-item-title">
+                    <strong>Terrapin Tech (V-004):</strong> Targeted AI Pipeline Scope Clarification
+                    <span class="deadline-badge">Due: 12-Nov-2026</span>
+                  </div>
+                  <p class="action-item-desc">
+                    Obtain written confirmation that wealth management portfolio holdings and advisor compensation data are not processed by third-party AI APIs or used for external model benchmarking.
+                  </p>
+                  <div class="action-owner">Owner: Wealth Management Risk</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Category 3: Continuous & Annual Monitoring -->
+          <div class="action-card normal-card">
+            <div class="action-card-header">
+              <div class="action-badge-pill pill-normal">ANNUAL / CONTINUOUS</div>
+              <h3>Preventative Clauses & Utility Oversight</h3>
+            </div>
+            
+            <div class="action-items-list" id="normal-actions-list">
+              
+              <div class="action-item" data-action-id="act-6">
+                <label class="custom-checkbox">
+                  <input type="checkbox" class="action-check" data-action-id="act-6">
+                  <span class="checkmark"></span>
+                </label>
+                <div class="action-item-content">
+                  <div class="action-item-title">
+                    <strong>FSSI (V-003):</strong> Insert Preventative AI Notice Clause
+                    <span class="deadline-badge">Next Contract Renewal</span>
+                  </div>
+                  <p class="action-item-desc">
+                    Maintain standard SOC 2 Type 2 oversight for PII and IRS tax documents. Require FSSI to notify Meridian in writing prior to introducing generative AI or automated text extraction models.
+                  </p>
+                  <div class="action-owner">Owner: Vendor Management</div>
+                </div>
+              </div>
+
+              <div class="action-item" data-action-id="act-7">
+                <label class="custom-checkbox">
+                  <input type="checkbox" class="action-check" data-action-id="act-7">
+                  <span class="checkmark"></span>
+                </label>
+                <div class="action-item-content">
+                  <div class="action-item-title">
+                    <strong>The Clearing House (V-006):</strong> Monitor Network Rule Updates
+                    <span class="deadline-badge">Continuous</span>
+                  </div>
+                  <p class="action-item-desc">
+                    Continue standard critical utility BC/DR and FFIEC compliance audits. Monitor TCH network rule revisions for future introduction of network-level AI anomaly screening or centralized fraud scoring.
+                  </p>
+                  <div class="action-owner">Owner: Payments Compliance</div>
+                </div>
+              </div>
+
+              <div class="action-item" data-action-id="act-8">
+                <label class="custom-checkbox">
+                  <input type="checkbox" class="action-check" data-action-id="act-8">
+                  <span class="checkmark"></span>
+                </label>
+                <div class="action-item-content">
+                  <div class="action-item-title">
+                    <strong>Portfolio-Wide:</strong> Establish Enterprise AI Sub-processor Registry
+                    <span class="deadline-badge">Q4 2026</span>
+                  </div>
+                  <p class="action-item-desc">
+                    Institute centralized tracking for all 4th-party LLMs and cloud AI platforms across Meridian's entire supplier inventory.
+                  </p>
+                  <div class="action-owner">Owner: TPRM Committee</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= TAB 6: METHODOLOGY & OSINT SOURCES ================= -->
+      <section id="tab-osint-methodology" class="tab-pane" role="tabpanel">
+        <div class="section-intro">
+          <div>
+            <h2 class="section-title">Assessment Methodology, OSINT Framework & Verification</h2>
+            <p class="section-subtitle">
+              Documentation of analytical standards applied in Case Study 1, verbatim evidence verification, and proportionality principles.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2-col">
+          <!-- Methodology Principles -->
+          <div class="glass-card">
+            <h3 class="card-title">Analytical Standards & Principles</h3>
+            <ul class="methodology-list">
+              <li>
+                <strong>Tier-Driven Proportionality:</strong>
+                High and Critical tier vendors (Fiserv, BNY, The Clearing House, AutomWorx, FSSI) received exhaustive sweeps encompassing SEC disclosures, corporate newsrooms, tech blogs, and regulatory filings. Medium criticality vendors (Terrapin) received targeted reviews focused on marketing claims and product architecture.
+              </li>
+              <li>
+                <strong>Verbatim Evidence Standard:</strong>
+                Every affirmative AI finding contains primary quote excerpts and source citations with exact retrieval dates (13-10-2026), mirroring the rigor established in benchmark row <code>V-000</code>.
+              </li>
+              <li>
+                <strong>Delineation Between 3rd and 4th Parties:</strong>
+                Clear distinction is maintained between the direct vendor providing the business service and the upstream foundation model provider (e.g., Fiserv is the 3rd party; OpenAI and Microsoft Azure are 4th parties).
+              </li>
+              <li>
+                <strong>Zero Workbook Integrity Violations:</strong>
+                Columns A through K in <code>Meridian_Vendor_Input.xlsx</code> were preserved untouched. All 11 student columns (L–V) were populated with consistent typography and formatting.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Deliverables & Verification Checklist -->
+          <div class="glass-card">
+            <h3 class="card-title">Case Study 1 Submission Deliverables</h3>
+            <div class="deliverables-box">
+              <div class="deliverable-item">
+                <div class="d-icon">&#128196;</div>
+                <div class="d-info">
+                  <strong>Meridian_Vendor_Input.xlsx</strong>
+                  <span>Final Submission File (19.9 KB) — All student cells populated and formatted.</span>
+                </div>
+                <a href="Meridian_Vendor_Input.xlsx" download class="btn btn-sm btn-primary">Download</a>
+              </div>
+
+              <div class="deliverable-item">
+                <div class="d-icon">&#128190;</div>
+                <div class="d-info">
+                  <strong>Meridian_Vendor_Input_Original.xlsx</strong>
+                  <span>Pristine Baseline Backup Archive (24.9 KB).</span>
+                </div>
+                <a href="Meridian_Vendor_Input_Original.xlsx" download class="btn btn-sm btn-outline">Backup</a>
+              </div>
+            </div>
+
+            <div class="quality-checklist">
+              <h4>Submission Verification Checklist</h4>
+              <div class="check-item checked">
+                <span class="check-icon">&#10003;</span> Columns A–K untouched (No blue-grey overwrites)
+              </div>
+              <div class="check-item checked">
+                <span class="check-icon">&#10003;</span> Columns L–V populated for all 6 vendors (Rows 6–11)
+              </div>
+              <div class="check-item checked">
+                <span class="check-icon">&#10003;</span> Consistent typography (Arial 10pt, left-aligned, top-centered)
+              </div>
+              <div class="check-item checked">
+                <span class="check-icon">&#10003;</span> Actionable TPRM recommendations with explicit timelines
+              </div>
+              <div class="check-item checked">
+                <span class="check-icon">&#10003;</span> Executive Dashboard UI live and verified
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OSINT Evidence Table -->
+        <div class="glass-card mt-4">
+          <div class="card-header">
+            <h3 class="card-title">Consolidated OSINT Source Register</h3>
+            <span class="card-badge">Primary Evidence Index</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="inventory-data-table">
+              <thead>
+                <tr>
+                  <th>Vendor ID</th>
+                  <th>Vendor Name</th>
+                  <th>Primary OSINT Source</th>
+                  <th>Key Evidence Excerpt</th>
+                  <th>Retrieval Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>V-001</strong></td>
+                  <td>AutomWorx</td>
+                  <td><code>automworx.com/resources</code> (Technical Blog)</td>
+                  <td>"Automic V26 introduces native AI Jobs, BYOM framework leveraging Model Context Protocol (MCP), and GenAI Automation Assistant..."</td>
+                  <td>13-10-2026</td>
+                </tr>
+                <tr>
+                  <td><strong>V-002</strong></td>
+                  <td>Fiserv, Inc.</td>
+                  <td><code>fiserv.com/newsroom</code> (Press Release)</td>
+                  <td>"Collaborating with OpenAI on agentOS across core banking; four-layer stack spanning agents, unified governance, and direct native integration..."</td>
+                  <td>13-10-2026</td>
+                </tr>
+                <tr>
+                  <td><strong>V-003</strong></td>
+                  <td>FSSI</td>
+                  <td><code>fssi-ca.com/security-compliance</code></td>
+                  <td>"workStreamOne workflow portal, automated inserters, SOC 2 Type 2 / HIPAA. No AI/LLM models in print composition pipeline."</td>
+                  <td>13-10-2026</td>
+                </tr>
+                <tr>
+                  <td><strong>V-004</strong></td>
+                  <td>Terrapin Tech</td>
+                  <td><code>terrapintech.com/resources</code></td>
+                  <td>"AI-ready data for wealth management: building a clean unified data foundation whether or not the firm adopts advanced AI tools."</td>
+                  <td>13-10-2026</td>
+                </tr>
+                <tr>
+                  <td><strong>V-005</strong></td>
+                  <td>BNY</td>
+                  <td><code>bny.com/insights/payments-modernization.html</code></td>
+                  <td>"Proprietary enterprise AI operating system 'Eliza'; Google Cloud Gemini Enterprise integration for multimodal research and payment exception agents."</td>
+                  <td>13-10-2026</td>
+                </tr>
+                <tr>
+                  <td><strong>V-006</strong></td>
+                  <td>The Clearing House</td>
+                  <td><code>theclearinghouse.org</code> (Treasury Letter & RTP Rules)</td>
+                  <td>"Advocates AI adoption for participant banks; clearing and settlement switches run strictly on deterministic ISO 20022 messaging rules."</td>
+                  <td>13-10-2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-left">
+        <span>Meridian Financial Institution &bull; Third-Party Risk Management (TPRM)</span>
+        <span class="footer-sub">Case Study 1: OSINT AI Footprint & Model Governance</span>
+      </div>
+      <div class="footer-right">
+        <span>Evaluator: <strong>Student Analyst</strong></span>
+        <span>Verified Submission Date: <strong>13-10-2026</strong></span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ================= VENDOR DOSSIER SLIDE-OVER DRAWER ================= -->
+  <div id="dossier-drawer-overlay" class="drawer-overlay hidden" aria-hidden="true">
+    <div id="dossier-drawer" class="drawer-container" role="dialog" aria-modal="true" aria-labelledby="drawer-vendor-name">
+      
+      <!-- Drawer Header -->
+      <div class="drawer-header">
+        <div class="drawer-header-left">
+          <div class="dossier-id-badge" id="drawer-vendor-id">V-002</div>
+          <div>
+            <h2 class="dossier-title" id="drawer-vendor-name">Fiserv, Inc.</h2>
+            <div class="dossier-sub-row">
+              <span class="dossier-category" id="drawer-vendor-category">Core Platform</span>
+              <a href="#" target="_blank" rel="noopener" class="dossier-website-link" id="drawer-vendor-website">
+                <span>Website</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="drawer-header-actions">
+          <button id="drawer-copy-btn" class="icon-button" title="Copy Dossier Summary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+          <button id="drawer-close-btn" class="icon-button drawer-close-btn" title="Close Drawer" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="dossier-metrics-strip">
+        <div class="d-metric-box">
+          <span class="dm-label">OPERATIONAL CRITICALITY</span>
+          <span class="dm-val" id="drawer-criticality">Critical</span>
+        </div>
+        <div class="d-metric-box">
+          <span class="dm-label">AI USAGE DETECTED</span>
+          <span class="dm-val" id="drawer-ai-usage">Yes</span>
+        </div>
+        <div class="d-metric-box">
+          <span class="dm-label">AI SECURITY RISK</span>
+          <span class="dm-val" id="drawer-ai-risk">Critical</span>
+        </div>
+        <div class="d-metric-box">
+          <span class="dm-label">GOVERNANCE URGENCY</span>
+          <span class="dm-val" id="drawer-urgency">Urgent (15-Day)</span>
+        </div>
+      </div>
+
+      <!-- Drawer Body Content -->
+      <div class="drawer-body" id="drawer-body-content">
+        
+        <!-- Section 1: Profile & Dependency -->
+        <div class="dossier-section">
+          <h3 class="dossier-sec-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            1. Operational Profile & Dependency
+          </h3>
+          <div class="dossier-grid-2">
+            <div>
+              <span class="field-title">Service / Product Provided</span>
+              <p class="field-val" id="drawer-service">DNA Core Platform</p>
+            </div>
+            <div>
+              <span class="field-title">Business Process Supported</span>
+              <p class="field-val" id="drawer-process">Core Account Processing</p>
+            </div>
+            <div>
+              <span class="field-title">Data Classification Accessed</span>
+              <p class="field-val" id="drawer-data-class">Customer Master & Balances</p>
+            </div>
+            <div>
+              <span class="field-title">Annual Data Volume</span>
+              <p class="field-val" id="drawer-volume">1.4M customers / 240M txns</p>
+            </div>
+          </div>
+          <div class="mt-2">
+            <span class="field-title">Criticality Rationale</span>
+            <p class="field-val-block" id="drawer-criticality-rationale"></p>
+          </div>
+          <div class="mt-2">
+            <span class="field-title">Assessment Depth Applied</span>
+            <p class="field-val-block" id="drawer-depth-applied"></p>
+          </div>
+        </div>
+
+        <!-- Section 2: AI Footprint & Evidence -->
+        <div class="dossier-section">
+          <h3 class="dossier-sec-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+            </svg>
+            2. OSINT AI Evidence & Use Case Analysis
+          </h3>
+          <div class="evidence-quote-box">
+            <span class="field-title">Primary OSINT Evidence & Source Excerpt</span>
+            <blockquote id="drawer-evidence-quote" class="evidence-text"></blockquote>
+          </div>
+          <div class="mt-3">
+            <span class="field-title">How Vendor May Be Using AI</span>
+            <div id="drawer-how-ai-used" class="field-val-block"></div>
+          </div>
+        </div>
+
+        <!-- Section 3: Subprocessors & Model Supply Chain -->
+        <div class="dossier-section">
+          <h3 class="dossier-sec-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+            </svg>
+            3. 4th-Party Model Sub-processors & Infrastructure
+          </h3>
+          <div>
+            <span class="field-title">Named AI Sub-processors / Model Providers</span>
+            <p class="field-val-block" id="drawer-subprocessors"></p>
+          </div>
+        </div>
+
+        <!-- Section 4: AI Security Risk & Recommended Actions -->
+        <div class="dossier-section">
+          <h3 class="dossier-sec-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            4. AI Security Risk Classification & Actionable Roadmap
+          </h3>
+          <div>
+            <span class="field-title">Risk Rationale</span>
+            <p class="field-val-block" id="drawer-risk-rationale"></p>
+          </div>
+          <div class="mt-3">
+            <span class="field-title">Recommended TPRM Governance Action</span>
+            <div class="action-highlight-box">
+              <p id="drawer-recommended-action"></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="drawer-footer">
+        <button class="btn btn-secondary" onclick="window.app.closeDossier()">Close</button>
+        <button class="btn btn-primary" id="drawer-print-btn" onclick="window.print()">Print Dossier</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="vendors_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

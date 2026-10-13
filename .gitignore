@@ -1,0 +1,21 @@
+# Operating System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python & Temporary Files
+__pycache__/
+*.py[cod]
+*$py.class
+*.tmp
+*.log
+
+# Editor & IDE Directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / Scratch
+node_modules/
+scratch/
