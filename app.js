@@ -85,17 +85,17 @@
     renderInventory();
     checkUrlHash();
 
+    setupAiLab();
+    setupCriticalityCalculator();
+    setupSignalCalculator();
+
     // Hotkey for Ctrl+K
     window.addEventListener('keydown', (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         elements.globalSearchInput.focus();
         elements.globalSearchInput.select();
-      
-    setupAiLab();
-    setupCriticalityCalculator();
-    setupSignalCalculator();
-  } else if (e.key === 'Escape') {
+      } else if (e.key === 'Escape') {
         closeDossier();
       }
     });
@@ -622,21 +622,7 @@ Recommended Action: ${vendor['Recommended Action']}`;
       .replace(/'/g, '&#39;');
   }
 
-  // Expose global app methods for inline onclick events
-  window.app = {
-    openDossier,
-    closeDossier,
-    switchTab
-  };
 
-  // Run on DOM Ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-
-})();
 
 
   function getSignalBadgeHtml(tag) {
@@ -730,6 +716,11 @@ Recommended Action: ${vendor['Recommended Action']}`;
         exportAnalyzedExcel();
       });
     }
+
+    // Auto-prepare demo baseline template so the lab is immediately primed
+    setTimeout(() => {
+      loadDemoBaselineTemplate();
+    }, 100);
   }
 
   function handleFileSelection(file) {
@@ -1102,3 +1093,22 @@ Recommended Action: ${vendor['Recommended Action']}`;
       cb.addEventListener('change', updateSignalCalc);
     });
   }
+
+  // Expose global app methods for inline onclick events
+  window.app = {
+    openDossier,
+    closeDossier,
+    switchTab,
+    executeAiPipeline,
+    loadDemoBaselineTemplate,
+    exportAnalyzedExcel
+  };
+
+  // Run on DOM Ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
