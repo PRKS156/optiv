@@ -2296,6 +2296,28 @@ body {
   border: 1px solid rgba(239, 68, 68, 0.4) !important;
 }
 
+/* Criticality Tier Badges */
+.badge-tier-critical {
+  background: rgba(239, 68, 68, 0.18) !important;
+  color: #f87171 !important;
+  border: 1px solid rgba(239, 68, 68, 0.45) !important;
+}
+.badge-tier-high {
+  background: rgba(249, 115, 22, 0.18) !important;
+  color: #fb923c !important;
+  border: 1px solid rgba(249, 115, 22, 0.45) !important;
+}
+.badge-tier-medium {
+  background: rgba(234, 179, 8, 0.18) !important;
+  color: #facc15 !important;
+  border: 1px solid rgba(234, 179, 8, 0.45) !important;
+}
+.badge-tier-low {
+  background: rgba(16, 185, 129, 0.18) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(16, 185, 129, 0.45) !important;
+}
+
 /* AI Due Diligence Lab & File Ingestion Workbench */
 .ai-lab-workbench {
   display: grid;

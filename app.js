@@ -625,6 +625,15 @@ Recommended Action: ${vendor['Recommended Action']}`;
 
 
 
+  function getTierBadgeClass(tier) {
+    if (!tier) return '';
+    const t = String(tier).toLowerCase();
+    if (t.includes('critical')) return 'badge-tier-critical';
+    if (t.includes('high')) return 'badge-tier-high';
+    if (t.includes('medium')) return 'badge-tier-medium';
+    return 'badge-tier-low';
+  }
+
   function getSignalBadgeHtml(tag) {
     if (!tag) return '';
     let cls = 'badge-confirmed';
@@ -699,7 +708,7 @@ Recommended Action: ${vendor['Recommended Action']}`;
     if (demoBtn) {
       demoBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        loadDemoBaselineTemplate();
+        loadDemoBaselineTemplate(false);
       });
     }
 
@@ -719,7 +728,7 @@ Recommended Action: ${vendor['Recommended Action']}`;
 
     // Auto-prepare demo baseline template so the lab is immediately primed
     setTimeout(() => {
-      loadDemoBaselineTemplate();
+      loadDemoBaselineTemplate(true);
     }, 100);
   }
 
@@ -757,12 +766,15 @@ Recommended Action: ${vendor['Recommended Action']}`;
     }
   }
 
-  function loadDemoBaselineTemplate() {
+  function loadDemoBaselineTemplate(silent = false) {
     const statusText = document.getElementById('file-status-text');
     const recordsBadge = document.getElementById('records-loaded-badge');
 
     // Ingest the 6 in-scope vendors from VENDORS_DATA
-    pipelineState.uploadedVendors = state.vendors.filter(v => !v.is_benchmark);
+    const vSource = (state.vendors && state.vendors.length > 0) 
+      ? state.vendors 
+      : (typeof VENDORS_DATA !== 'undefined' ? VENDORS_DATA : []);
+    pipelineState.uploadedVendors = vSource.filter(v => !v.is_benchmark);
     
     if (statusText) {
       statusText.innerHTML = '<strong>Loaded:</strong> Meridian_Vendor_Input_Original.xlsx (6 In-Scope Vendors with unpopulated Columns L–V)';
@@ -775,7 +787,9 @@ Recommended Action: ${vendor['Recommended Action']}`;
 
     appendTerminalLog('success', '[INGEST] Loaded 6 in-scope vendors from Meridian template (V-001 through V-006).');
     appendTerminalLog('info', '[VALIDATE] Schema validation passed: Columns A–K verified. Ready to execute pipeline.');
-    showToast('Loaded Meridian Baseline Template: 6 In-Scope Vendors Ready!');
+    if (!silent) {
+      showToast('Loaded Meridian Baseline Template: 6 In-Scope Vendors Ready!');
+    }
   }
 
   function appendTerminalLog(type, msg) {
@@ -787,12 +801,18 @@ Recommended Action: ${vendor['Recommended Action']}`;
     line.className = `log-line ${type}`;
     line.innerHTML = `<span class="timestamp">${timeStr}</span> ${escapeHtml(msg)}`;
     terminal.appendChild(line);
-    terminal.parentElement.scrollTop = terminal.parentElement.scrollHeight;
+    if (terminal.parentElement) {
+      terminal.parentElement.scrollTop = terminal.parentElement.scrollHeight;
+    }
   }
 
   async function executeAiPipeline() {
+    if (state.currentTab !== 'tab-ai-lab') {
+      switchTab('tab-ai-lab');
+    }
+
     if (!pipelineState.uploadedVendors || pipelineState.uploadedVendors.length === 0) {
-      loadDemoBaselineTemplate();
+      loadDemoBaselineTemplate(true);
     }
 
     const runBtn = document.getElementById('btn-run-pipeline');
@@ -914,23 +934,33 @@ Recommended Action: ${vendor['Recommended Action']}`;
 
       return `
         <tr>
-          <td><strong>${escapeHtml(v['Vendor ID'])}</strong></td>
-          <td>${escapeHtml(v['Vendor Name'])}</td>
+          <td><strong style="color:#38bdf8; font-family:var(--font-mono);">${escapeHtml(v['Vendor ID'])}</strong></td>
+          <td><strong>${escapeHtml(v['Vendor Name'])}</strong></td>
           <td><span style="font-family:'JetBrains Mono'; font-weight:700; color:#38bdf8;">${math.total_score} / 100</span></td>
           <td><span class="badge ${getTierBadgeClass(math.tier)}">${escapeHtml(math.tier)}</span></td>
           <td style="font-size:0.75rem;">${escapeHtml(v['Assessment Depth Applied'] ? v['Assessment Depth Applied'].split('–')[0].split('—')[0].trim() : 'Full Review')}</td>
-          <td><strong>${escapeHtml(v['AI Usage Detected (Y/N)'])}</strong></td>
+          <td>
+            <span class="indicator-dot ${v['AI Usage Detected (Y/N)'] === 'Yes' ? 'green' : v['AI Usage Detected (Y/N)'] === 'No' ? 'red' : 'yellow'}"></span>
+            <strong>${escapeHtml(v['AI Usage Detected (Y/N)'])}</strong>
+          </td>
           <td>${getSignalBadgeHtml(sigTag)}</td>
           <td style="font-family:'JetBrains Mono'; font-size:0.8rem;">${sigWeight.toFixed(2)}</td>
-          <td style="font-size:0.78rem;">${escapeHtml(v['Named AI Sub-processors / Model Providers'] || 'None')}</td>
+          <td style="font-size:0.78rem; color:#c084fc;">${escapeHtml(v['Named AI Sub-processors / Model Providers'] || 'None')}</td>
           <td><span class="ai-risk-badge ${riskClass}">${escapeHtml(v['AI Security Risk Classification'])}</span></td>
           <td><span class="urgency-indicator ${v.urgency_class || 'normal'}">${escapeHtml(v.urgency || 'Continuous')}</span></td>
+          <td>
+            <button class="btn btn-sm btn-secondary" onclick="window.app.openDossier('${escapeHtml(v['Vendor ID'])}')" style="padding: 2px 8px; font-size: 0.72rem;">
+              Dossier
+            </button>
+          </td>
         </tr>
       `;
     }).join('');
 
     tbody.innerHTML = results;
-    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => {
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
   }
 
   function exportAnalyzedExcel() {

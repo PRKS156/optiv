@@ -145,6 +145,17 @@
             <span class="meta-value">13-Oct-2026</span>
           </div>
         </div>
+        <div class="hero-actions-strip" style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="window.app.executeAiPipeline();" style="box-shadow: 0 0 15px rgba(14, 165, 233, 0.4); display: flex; align-items: center; gap: 0.5rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>⚡ Run Live AI Simulation Demo</span>
+          </button>
+          <button class="btn btn-secondary" onclick="window.app.switchTab('tab-ai-lab');">
+            <span>Open AI Due Diligence Lab</span>
+          </button>
+        </div>
       </div>
       <div class="hero-graphic-card">
         <img src="meridian_hero_banner.jpg" alt="Meridian Enterprise Risk Shield" class="hero-banner-img" />
@@ -326,6 +337,37 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- Live AI Simulation Quick-Launch Banner -->
+        <div class="glass-card" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(99, 102, 241, 0.12) 100%); border: 1px solid rgba(14, 165, 233, 0.35); display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.75rem; border-radius: 12px; gap: 1rem; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(14, 165, 233, 0.2); display: flex; align-items: center; justify-content: center; color: #38bdf8; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                <h4 style="margin: 0; font-size: 1rem; color: #ffffff; font-weight: 700;">⚡ Interactive AI Due Diligence Pipeline Simulation</h4>
+                <span class="badge" style="background: rgba(14, 165, 233, 0.25); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.4);">Deliverable 05 Live Demo</span>
+              </div>
+              <p style="margin: 0; font-size: 0.82rem; color: #94a3b8;">
+                Simulate end-to-end OSINT harvesting, 100-point deterministic triage scoring, signal weighting, and remediation SLA generation across the 6 in-scope vendors.
+              </p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.75rem;">
+            <button class="btn btn-primary" onclick="window.app.executeAiPipeline();" style="box-shadow: 0 0 15px rgba(14, 165, 233, 0.4); display: flex; align-items: center; gap: 0.5rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span>Execute 5-Stage AI Simulation</span>
+            </button>
+            <button class="btn btn-secondary" onclick="window.app.switchTab('tab-ai-lab');">
+              <span>Open Ingestion Workbench</span>
+            </button>
+          </div>
         </div>
 
         <!-- Executive Alert Callout -->
@@ -631,6 +673,7 @@
                   <th>Named AI Sub-processors</th>
                   <th>AI Risk</th>
                   <th>Remediation SLA</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody id="pipeline-results-tbody">
