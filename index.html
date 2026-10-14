@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
+  <!-- SheetJS for Live Client-Side Excel Parsing and Export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
   <!-- Background ambient glow effects -->
@@ -57,6 +59,15 @@
       </div>
 
       <div class="header-right">
+        <!-- Download Official PPTX Deck -->
+        <a id="download-pptx-link" href="Case_Study_1_Presentation.pptx" download="Case_Study_1_Presentation.pptx" class="btn btn-secondary" title="Download Official Presentation (.pptx)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span>Presentation (.pptx)</span>
+        </a>
         <!-- Theme Toggle -->
         <button id="theme-toggle-btn" class="icon-button" title="Toggle Light / Dark Mode" aria-label="Toggle theme">
           <svg id="theme-icon-moon" class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -75,15 +86,26 @@
           </svg>
         </button>
 
-        <!-- Export / Print Mode Button -->
-        <button id="export-print-btn" class="btn btn-secondary" title="Export Executive PDF / Print Mode">
+        <!-- Download Master Guide PDF -->
+        <a id="download-guide-pdf" href="Case_Study_1_Beginners_Master_Guide_Final.pdf" download="Case_Study_1_Beginners_Master_Guide_Final.pdf" class="btn btn-secondary" title="Download Complete Beginner's Master Guide PDF">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-            <rect x="6" y="14" width="12" height="8"></rect>
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
           </svg>
-          <span>Print / PDF</span>
-        </button>
+          <span>Master Guide (PDF)</span>
+        </a>
+
+        <!-- Download Jupyter Notebook -->
+        <a id="download-ipynb-link" href="Meridian_TPRM_AI_Due_Diligence.ipynb" download="Meridian_TPRM_AI_Due_Diligence.ipynb" class="btn btn-secondary" title="Download Jupyter / Colab Pipeline Notebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          <span>Jupyter (.ipynb)</span>
+        </a>
 
         <!-- Download Excel Workbook -->
         <a id="download-excel-link" href="Meridian_Vendor_Input.xlsx" download="Meridian_Vendor_Input.xlsx" class="btn btn-primary" title="Download Final Populated Excel Workbook">
@@ -140,6 +162,23 @@
           <rect x="3" y="14" width="7" height="7"></rect>
         </svg>
         <span>Command Center</span>
+      </button>
+
+      <button class="nav-tab" data-tab="tab-ai-lab" id="tab-btn-ai-lab" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <span>AI Due Diligence Lab</span>
+        <span class="tab-badge" style="background:#0ea5e9; color:#fff;">Live Demo</span>
+      </button>
+
+      <button class="nav-tab" data-tab="tab-solution-design" id="tab-btn-solution-design" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="3" y1="9" x2="21" y2="9"></line>
+          <line x1="9" y1="21" x2="9" y2="9"></line>
+        </svg>
+        <span>Solution Design & Architecture</span>
       </button>
 
       <button class="nav-tab" data-tab="tab-risk-matrix" id="tab-btn-risk-matrix" role="tab" aria-selected="false">
@@ -454,7 +493,348 @@
 
       </section>
 
-      <!-- ================= TAB 2: INTERACTIVE RISK MATRIX ================= -->
+      
+      <!-- ================= TAB: AI DUE DILIGENCE LAB (LIVE DEMO) ================= -->
+      <section id="tab-ai-lab" class="tab-pane" role="tabpanel">
+        <div class="section-intro">
+          <div>
+            <div class="hero-tag" style="display:inline-block; margin-bottom: 0.5rem;">DELIVERABLE 05 & ROLE 04: WORKING DEMONSTRATION</div>
+            <h2 class="section-title">Automated AI Due Diligence Pipeline & Triage Engine</h2>
+            <p class="section-subtitle">
+              Interactive end-to-end processing workbench: <strong>Upload Raw Inventory → Apply 100-Point Criticality Engine → Execute OSINT Crawler & NLP Extraction → Apply Evidentiary Weighting & Signal Tagging → Classify AI Risk → Export Populated Excel</strong>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Workbench Grid -->
+        <div class="ai-lab-workbench">
+          
+          <!-- Left: Ingestion & Upload Area -->
+          <div class="glass-card">
+            <h3 class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              1. Ingest Vendor Inventory File
+            </h3>
+            
+            <div id="dropzone-box" class="dropzone-box">
+              <svg class="dropzone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <line x1="9" y1="15" x2="12" y2="12"></line>
+                <line x1="15" y1="15" x2="12" y2="12"></line>
+              </svg>
+              <div class="dropzone-title">Drag & Drop Meridian Excel / CSV File</div>
+              <div class="dropzone-sub">Supports .xlsx, .xls, or .csv with Columns A–K (Provided)</div>
+              
+              <input type="file" id="vendor-file-input" accept=".xlsx, .xls, .csv" style="display:none;" />
+              
+              <div class="dropzone-actions">
+                <button type="button" id="btn-browse-file" class="btn btn-secondary">
+                  <span>Browse File...</span>
+                </button>
+                <button type="button" id="btn-load-demo-template" class="btn btn-primary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                  <span>⚡ Load Meridian Baseline Template (Unpopulated)</span>
+                </button>
+              </div>
+            </div>
+
+            <div id="file-status-bar" style="margin-top: 1rem; font-size: 0.85rem; color: #94a3b8; display:flex; justify-content:space-between; align-items:center;">
+              <span id="file-status-text">Status: Ready to ingest. Click 'Load Meridian Baseline Template' to test with 1-click.</span>
+              <span id="records-loaded-badge" class="badge" style="display:none; background:rgba(14,165,233,0.15); color:#38bdf8;">0 Records</span>
+            </div>
+          </div>
+
+          <!-- Right: Execution Controller & Stepper -->
+          <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                2. Execution & Live Triage Stream
+              </h3>
+              <button id="btn-run-pipeline" class="btn btn-primary" style="box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Execute AI Pipeline</span>
+              </button>
+            </div>
+
+            <!-- Animated Pipeline Stepper -->
+            <div class="pipeline-stepper" id="pipeline-stepper">
+              <div class="pipeline-step active" id="step-1" title="1. Ingest & Validate">1</div>
+              <div class="pipeline-step" id="step-2" title="2. Deterministic Scoring">2</div>
+              <div class="pipeline-step" id="step-3" title="3. OSINT Web Crawl">3</div>
+              <div class="pipeline-step" id="step-4" title="4. Signal Tagging">4</div>
+              <div class="pipeline-step" id="step-5" title="5. Classification & SLA">5</div>
+            </div>
+
+            <!-- Terminal Output Window -->
+            <div class="pipeline-terminal" id="pipeline-terminal">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot red"></span>
+                  <span class="terminal-dot yellow"></span>
+                  <span class="terminal-dot green"></span>
+                </div>
+                <span>TPRM_AI_ENGINE_V2.6 // TERMINAL READY</span>
+              </div>
+              <div id="terminal-content">
+                <div class="log-line info"><span class="timestamp">[11:15:00]</span><span class="tag">[SYSTEM]</span> Meridian AI Due Diligence Engine initialized. Awaiting file input...</div>
+                <div class="log-line"><span class="timestamp">[11:15:01]</span><span class="tag">[READY]</span> Deterministic 100-Point Scoring Engine loaded.</div>
+                <div class="log-line"><span class="timestamp">[11:15:02]</span><span class="tag">[READY]</span> OSINT Entity Extractor: regex patterns for OpenAI, Azure, Gemini, MCP active.</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Live Pipeline Output Table -->
+        <div class="glass-card" id="pipeline-results-card" style="display:none; margin-top: 1.5rem;">
+          <div class="card-header" style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h3 class="card-title">Enriched Pipeline Output (Columns L–V Populated)</h3>
+              <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 2px;">Dynamically calculated criticality scores, extracted OSINT evidence, signal tags, and remediation actions.</p>
+            </div>
+            <button id="btn-export-pipeline-excel" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download Analyzed Excel (.xlsx)</span>
+            </button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="inventory-data-table" id="pipeline-results-table">
+              <thead>
+                <tr>
+                  <th>Vendor ID</th>
+                  <th>Vendor Name</th>
+                  <th>Criticality Score</th>
+                  <th>Criticality Tier</th>
+                  <th>Assessment Depth</th>
+                  <th>AI Detected?</th>
+                  <th>Signal Tag</th>
+                  <th>Confidence</th>
+                  <th>Named AI Sub-processors</th>
+                  <th>AI Risk</th>
+                  <th>Remediation SLA</th>
+                </tr>
+              </thead>
+              <tbody id="pipeline-results-tbody">
+                <!-- Dynamically populated via app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= TAB: SOLUTION DESIGN & ARCHITECTURE ================= -->
+      <section id="tab-solution-design" class="tab-pane" role="tabpanel">
+        <div class="section-intro">
+          <div>
+            <div class="hero-tag" style="display:inline-block; margin-bottom: 0.5rem;">DELIVERABLE 05 SPECIFICATION</div>
+            <h2 class="section-title">Solution Design: Functional Pipeline & System Architecture</h2>
+            <p class="section-subtitle">
+              Formal engineering diagrams documenting the 5-stage due diligence data flow and modular microservice architecture.
+            </p>
+          </div>
+        </div>
+
+        <div class="architecture-container">
+
+          <!-- DIAGRAM 1: FUNCTIONAL DESIGN DIAGRAM -->
+          <div class="diagram-card">
+            <div class="diagram-title-row">
+              <div>
+                <h3 style="font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin-bottom: 4px;">1. Functional Design Diagram: End-to-End Due Diligence Pipeline</h3>
+                <p style="font-size: 0.85rem; color: #94a3b8;">Data flow from raw vendor inventory ingestion through algorithmic triage, multi-channel OSINT harvesting, and governance action generation.</p>
+              </div>
+              <span class="badge" style="background:rgba(14,165,233,0.15); color:#38bdf8;">Data Flow Architecture</span>
+            </div>
+
+            <div class="functional-flow-grid">
+              
+              <div class="flow-stage-card">
+                <div class="flow-stage-num">STAGE 01</div>
+                <div class="flow-stage-title">Ingestion & Validation</div>
+                <div class="flow-stage-desc">Parses Meridian Excel / CSV inventory. Validates schema across Columns A–K (operational baseline, data classification, volume).</div>
+                <div class="flow-stage-badges">
+                  <span class="flow-mini-badge">Excel / CSV</span>
+                  <span class="flow-mini-badge">Schema Check</span>
+                  <span class="flow-mini-badge">Normalization</span>
+                </div>
+              </div>
+
+              <div class="flow-stage-card">
+                <div class="flow-stage-num">STAGE 02</div>
+                <div class="flow-stage-title">Triage & Depth Engine</div>
+                <div class="flow-stage-desc">Applies 100-Point Deterministic Rubric. Evaluates Data Sensitivity (30), Dependency (30), Rails (20), and Volume (20) to assign Tier and allocate Depth.</div>
+                <div class="flow-stage-badges">
+                  <span class="flow-mini-badge">100-Pt Rubric</span>
+                  <span class="flow-mini-badge">Tier Gating</span>
+                  <span class="flow-mini-badge">Depth Budget</span>
+                </div>
+              </div>
+
+              <div class="flow-stage-card">
+                <div class="flow-stage-num">STAGE 03</div>
+                <div class="flow-stage-title">Multi-Channel OSINT Harvest</div>
+                <div class="flow-stage-desc">Tier-driven crawler sweeps trust centers, SEC 10-K risk factors, API developer documentation, job postings, and corporate press releases.</div>
+                <div class="flow-stage-badges">
+                  <span class="flow-mini-badge">SEC Filings</span>
+                  <span class="flow-mini-badge">API Docs</span>
+                  <span class="flow-mini-badge">Trust Centers</span>
+                  <span class="flow-mini-badge">Job Boards</span>
+                </div>
+              </div>
+
+              <div class="flow-stage-card">
+                <div class="flow-stage-num">STAGE 04</div>
+                <div class="flow-stage-title">Signal Extraction & Weighting</div>
+                <div class="flow-stage-desc">Regex & NLP entity extraction for LLMs, SDKs, and MCP. Applies 4-tier weighting hierarchy to separate production deployments from marketing hype.</div>
+                <div class="flow-stage-badges">
+                  <span class="flow-mini-badge">NLP Extractor</span>
+                  <span class="flow-mini-badge">Signal Tagger</span>
+                  <span class="flow-mini-badge">Confidence Wt</span>
+                </div>
+              </div>
+
+              <div class="flow-stage-card">
+                <div class="flow-stage-num">STAGE 05</div>
+                <div class="flow-stage-title">Governance & Action Outputs</div>
+                <div class="flow-stage-desc">Generates enriched Excel register (Columns L–V), 4th-party sub-processor inventory, contractual addenda, and prioritized 15/30-day action items.</div>
+                <div class="flow-stage-badges">
+                  <span class="flow-mini-badge">Enriched Excel</span>
+                  <span class="flow-mini-badge">AI Clauses</span>
+                  <span class="flow-mini-badge">SLAs & Alerts</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- DIAGRAM 2: SYSTEM MICROSERVICES ARCHITECTURE -->
+          <div class="diagram-card">
+            <div class="diagram-title-row">
+              <div>
+                <h3 style="font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin-bottom: 4px;">2. System Architecture Diagram: Modular Technical Components</h3>
+                <p style="font-size: 0.85rem; color: #94a3b8;">Multi-tier microservices architecture separating client presentation, intelligence processing engines, and secure persistence stores.</p>
+              </div>
+              <span class="badge" style="background:rgba(139,92,246,0.15); color:#a78bfa;">System Microservices</span>
+            </div>
+
+            <div class="system-layers-grid">
+              
+              <!-- Layer 1 -->
+              <div class="system-layer">
+                <div class="system-layer-header">
+                  <span class="layer-indicator" style="background:#0ea5e9;"></span>
+                  <span class="system-layer-name">PRESENTATION & CLIENT INTERFACE LAYER</span>
+                </div>
+                <div class="system-services-row">
+                  <div class="service-component">
+                    <div class="service-component-title">Executive Web Platform (UI)</div>
+                    <div class="service-component-detail">Interactive dashboard, search, filterable inventory, slide-over dossiers, live pipeline runner.</div>
+                  </div>
+                  <div class="service-component">
+                    <div class="service-component-title">Analyst Data Science Notebook</div>
+                    <div class="service-component-detail">Jupyter/Colab notebook (Meridian_TPRM_AI_Due_Diligence.ipynb) for automated batch data science pipelines.</div>
+                  </div>
+                  <div class="service-component">
+                    <div class="service-component-title">Executive Slide Presentation</div>
+                    <div class="service-component-detail">12-slide stakeholder presentation deck (Case_Study_1_Presentation.pptx) for CISO & Risk Committee.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Layer 2 -->
+              <div class="system-layer">
+                <div class="system-layer-header">
+                  <span class="layer-indicator" style="background:#8b5cf6;"></span>
+                  <span class="system-layer-name">PROCESSING & INTELLIGENCE SERVICES LAYER</span>
+                </div>
+                <div class="system-services-row">
+                  <div class="service-component">
+                    <div class="service-component-title">Ingestion & Triage Service</div>
+                    <div class="service-component-detail">Excel/CSV parser, data validator, and deterministic 100-point criticality scoring engine.</div>
+                  </div>
+                  <div class="service-component">
+                    <div class="service-component-title">OSINT Harvester & Crawler Cluster</div>
+                    <div class="service-component-detail">Rate-limited ethical web crawler, headless browser renderer, and trust center parser.</div>
+                  </div>
+                  <div class="service-component">
+                    <div class="service-component-title">NLP Entity Extractor & Signal Tagger</div>
+                    <div class="service-component-detail">Multi-pass regex and NLP parser identifying models (OpenAI, Azure, Gemini, MCP) and tagging credibility.</div>
+                  </div>
+                  <div class="service-component">
+                    <div class="service-component-title">Evidentiary Weighting & Risk Matrix</div>
+                    <div class="service-component-detail">Algorithmic weighting engine mapping signal strength and data sensitivity to Meridian risk tiers.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Layer 3 -->
+              <div class="system-layer">
+                <div class="system-layer-header">
+                  <span class="layer-indicator" style="background:#10b981;"></span>
+                  <span class="system-layer-name">SECURE PERSISTENCE & AUDIT STORE LAYER</span>
+                </div>
+                <div class="system-services-row">
+                  <div class="service-component">
+                    <div class="service-component-title">Vendor Inventory Repository</div>
+                    <div class="service-component-detail">Enriched Excel workbook (Meridian_Vendor_Input.xlsx) and JSON analytics export store.</div>
+                  </div>
+                  <div class="service-component">
+                    <div class="service-component-title">Verifiable Evidence Store</div>
+                    <div class="service-component-detail">Cryptographic hashes, timestamped source screenshots, and verbatim text citations.</div>
+                  </div>
+                  <div class="service-component">
+                    <div class="service-component-title">4th-Party Model Registry</div>
+                    <div class="service-component-detail">Centralized inventory of foundation models, cloud AI providers, and sub-processor dependencies.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Layer 4 -->
+              <div class="system-layer">
+                <div class="system-layer-header">
+                  <span class="layer-indicator" style="background:#f59e0b;"></span>
+                  <span class="system-layer-name">ENTERPRISE SECURITY & TENANT GOVERNANCE</span>
+                </div>
+                <div class="system-services-row">
+                  <div class="service-component">
+                    <div class="service-component-title">Zero Data Retention Boundary</div>
+                    <div class="service-component-detail">Contractual and technical isolation preventing bank data from training external foundation models.</div>
+                  </div>
+                  <div class="service-component">
+                    <div class="service-component-title">Human-in-the-Loop Thresholds</div>
+                    <div class="service-component-detail">Enforced authorization checkpoints for autonomous agents operating on customer accounts or batch scripts.</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ================= TAB: INTERACTIVE RISK MATRIX ================= -->
       <section id="tab-risk-matrix" class="tab-pane" role="tabpanel">
         <div class="section-intro">
           <div>
@@ -1101,6 +1481,114 @@
           </div>
         </div>
 
+        <!-- Evidentiary Weighting & Signal Tagging Specification -->
+        <div class="glass-card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">4-Tier Evidentiary Weighting & Signal-Tag Hierarchy</h3>
+              <p style="font-size:0.82rem; color:#94a3b8; margin-top:2px;">
+                Strict evidentiary classification distinguishing between verified technical architecture and promotional sales collateral.
+              </p>
+            </div>
+            <span class="badge" style="background:rgba(34,197,94,0.15); color:#4ade80;">Evidentiary Weight Standards</span>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            
+            <div style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.3); border-radius:8px; padding:1rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <span class="badge badge-confirmed">CONFIRMED</span>
+                <span style="font-size:0.75rem; font-weight:700; color:#4ade80;">Weight: 0.90 – 1.00</span>
+              </div>
+              <h4 style="font-size:0.88rem; font-weight:700; color:#f8fafc; margin-bottom:4px;">Tier 1: Technical Truth</h4>
+              <p style="font-size:0.75rem; color:#cbd5e1; line-height:1.4;">
+                Official Sub-processor Registers, SEC 10-K / 10-Q Item 1A Risk Filings, Technical API documentation, SDK manuals, and SOC 2 Type II System Descriptions. Treated as audited fact.
+              </p>
+            </div>
+
+            <div style="background:rgba(14,165,233,0.06); border:1px solid rgba(14,165,233,0.3); border-radius:8px; padding:1rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <span class="badge badge-corroborated">CORROBORATED</span>
+                <span style="font-size:0.75rem; font-weight:700; color:#38bdf8;">Weight: 0.70 – 0.85</span>
+              </div>
+              <h4 style="font-size:0.88rem; font-weight:700; color:#f8fafc; margin-bottom:4px;">Tier 2: Engineering Proof</h4>
+              <p style="font-size:0.75rem; color:#cbd5e1; line-height:1.4;">
+                Applied AI Engineer job listings (e.g. <em>'Model Context Protocol'</em>), public developer code repositories (GitHub/PyPI/npm), and deep engineering architecture whitepapers.
+              </p>
+            </div>
+
+            <div style="background:rgba(245,158,11,0.06); border:1px solid rgba(245,158,11,0.3); border-radius:8px; padding:1rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <span class="badge badge-indicative">INDICATIVE</span>
+                <span style="font-size:0.75rem; font-weight:700; color:#fbbf24;">Weight: 0.50 – 0.65</span>
+              </div>
+              <h4 style="font-size:0.88rem; font-weight:700; color:#f8fafc; margin-bottom:4px;">Tier 3: Executive Statements</h4>
+              <p style="font-size:0.75rem; color:#cbd5e1; line-height:1.4;">
+                Verified C-Suite announcements (CEO LinkedIn posts), official corporate press releases announcing commercial partnerships, and keynote product briefings. Requires technical verification.
+              </p>
+            </div>
+
+            <div style="background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.3); border-radius:8px; padding:1rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <span class="badge badge-marketing">MARKETING-ONLY</span>
+                <span style="font-size:0.75rem; font-weight:700; color:#f87171;">Weight: 0.10 – 0.30</span>
+              </div>
+              <h4 style="font-size:0.88rem; font-weight:700; color:#f8fafc; margin-bottom:4px;">Tier 4: Sales Collateral (Discounted)</h4>
+              <p style="font-size:0.75rem; color:#cbd5e1; line-height:1.4;">
+                Promotional blog posts, marketing brochures claiming 'AI-driven insights', and educational thought-leadership. <strong>DISCOUNTED</strong> as Inconclusive / Negative for production risk.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Multi-Signal Credibility Calculator -->
+          <div style="margin-top: 1.5rem; background:rgba(15,23,42,0.8); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+              <span style="font-size:0.88rem; font-weight:700; color:#f8fafc;">Interactive Signal Credibility Calculator</span>
+              <span id="signal-calc-result" class="badge badge-confirmed" style="font-size:0.8rem; padding:4px 10px;">Composite Confidence: 0.95 (Confirmed)</span>
+            </div>
+            <p style="font-size:0.78rem; color:#94a3b8; margin-bottom:1rem;">
+              Test how combining independent evidentiary sources elevates signal credibility from indicative marketing claims to confirmed audit evidence:
+            </p>
+            
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.75rem;">
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.8rem; color:#cbd5e1; cursor:pointer;">
+                <input type="checkbox" id="check-sig-tier1" class="signal-calc-check" checked data-weight="0.95"> Tier 1: SEC 10-K / API Specs (0.95)
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.8rem; color:#cbd5e1; cursor:pointer;">
+                <input type="checkbox" id="check-sig-tier2" class="signal-calc-check" checked data-weight="0.80"> Tier 2: AI Engineer Job Ad / Repo (0.80)
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.8rem; color:#cbd5e1; cursor:pointer;">
+                <input type="checkbox" id="check-sig-tier3" class="signal-calc-check" checked data-weight="0.65"> Tier 3: Press Release / CEO Post (0.65)
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.8rem; color:#cbd5e1; cursor:pointer;">
+                <input type="checkbox" id="check-sig-tier4" class="signal-calc-check" data-weight="0.25"> Tier 4: Marketing Blog Post (0.25)
+              </label>
+            </div>
+          </div>
+
+          <!-- Source Strategy & The Stopping Rule -->
+          <div style="margin-top: 1.5rem; background:rgba(15,23,42,0.8); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:1.25rem;">
+            <h4 style="font-size:0.95rem; font-weight:700; color:#f8fafc; margin-bottom:6px; display:flex; align-items:center; gap:8px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;color:#0ea5e9;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="6" x2="12" y2="12"></line>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+              Source Strategy & The Stopping Rule ("Where Investigation Stops Paying Off")
+            </h4>
+            <div style="font-size:0.8rem; color:#cbd5e1; line-height:1.45;">
+              <p style="margin-bottom:6px;">
+                <strong>Tier-Driven Scope Allocation:</strong> We do not conduct equal research on all vendors. Critical-tier suppliers (Fiserv, BNY, TCH, Larkspur) mandate an exhaustive sweep across 6 source categories: 1) Trust portals, 2) SEC disclosures, 3) API guides, 4) Developer codebases, 5) Executive announcements, and 6) Direct questionnaires. Moderate/Low-tier suppliers stop after primary domain and product specification checks.
+              </p>
+              <p>
+                <strong>The "Stopping Rule" (The Law of Diminishing Returns):</strong> Once an affirmative Tier 1 or Tier 2 source confirms production AI deployment and identifies the 4th-party model provider, further open-ended OSINT yields diminishing returns. At that threshold, investigative effort immediately ceases and pivots to formal contractual engagement (15-day questionnaires and DPA addenda). Conversely, if a Moderate vendor (like FSSI) shows zero Tier 1/2 signals after checking their customer portal (workStreamOne) and compliance attestations, open-ended blog scraping stops to avoid chasing marketing false alarms.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
         <div class="grid-2-col">
           <!-- Methodology Principles -->
           <div class="glass-card">
@@ -1165,6 +1653,90 @@
               <div class="check-item checked">
                 <span class="check-icon">&#10003;</span> Executive Dashboard UI live and verified
               </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <!-- In-App Executive Presentation Slide Deck Viewer -->
+        <div class="glass-card" style="margin-bottom: 2rem;">
+          <div class="card-header" style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h3 class="card-title">Official Stakeholder Presentation Deck (Case_Study_1_Presentation.pptx)</h3>
+              <p style="font-size:0.82rem; color:#94a3b8; margin-top:2px;">
+                12-slide executive deck submitted for the CISO, Chief Risk Officer, and Third-Party Risk Committee.
+              </p>
+            </div>
+            <a href="Case_Study_1_Presentation.pptx" download class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>Download PPTX (54 KB)</span>
+            </a>
+          </div>
+
+          <div class="slide-cards-grid">
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 01</span>
+              <div class="slide-title">Executive Title & Scope</div>
+              <div class="slide-bullets">• Optiv Cyber Strategy Team<br>• Meridian TPRM AI Governance<br>• Evidence-driven OSINT framework</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 02</span>
+              <div class="slide-title">Strategic Context & Silent AI</div>
+              <div class="slide-bullets">• Silent AI proliferation in banking<br>• TPRM questionnaire blindspots<br>• The 4-pillar Optiv solution</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 03</span>
+              <div class="slide-title">Functional Design Pipeline</div>
+              <div class="slide-bullets">• 5-Stage due diligence data flow<br>• Ingest → Triage → OSINT → Risk → Action<br>• Automated governance outputs</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 04</span>
+              <div class="slide-title">System Microservices Architecture</div>
+              <div class="slide-bullets">• Presentation / Processing / Store layers<br>• Web UI, Analyst CLI, Colab notebook<br>• Cryptographic audit trail & RBAC</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 05</span>
+              <div class="slide-title">100-Point Criticality Rubric</div>
+              <div class="slide-bullets">• Objective 4-factor formula<br>• Data (30), Dep (30), Rail (20), Vol (20)<br>• Criticality drives assessment depth</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 06</span>
+              <div class="slide-title">4-Tier Evidentiary Hierarchy</div>
+              <div class="slide-bullets">• Tier 1 (0.95) to Tier 4 (0.25)<br>• Signal tagging & false-positive filter<br>• Technical truth vs marketing hype</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 07</span>
+              <div class="slide-title">Portfolio Risk Heatmap Matrix</div>
+              <div class="slide-bullets">• 7 Vendors mapped by Criticality & AI Risk<br>• 4 Active production AI footprints<br>• High-risk upper quadrant concentration</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 08</span>
+              <div class="slide-title">Fiserv DNA Core Deep-Dive</div>
+              <div class="slide-bullets">• agentOS & OpenAI collaboration<br>• Microsoft Azure AI Foundry & Copilot<br>• 1.4M Customer PII & balance risk</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 09</span>
+              <div class="slide-title">Payment Rails: BNY vs. TCH</div>
+              <div class="slide-bullets">• BNY: Eliza multi-agent AI (High Risk)<br>• TCH: Deterministic ISO 20022 switches<br>• Core transit payload is AI-free</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 10</span>
+              <div class="slide-title">Nuanced Profiles Debunked</div>
+              <div class="slide-bullets">• FSSI: Marketing hype debunked<br>• Terrapin: Downstream ETL normalized<br>• AutomWorx: Automic V26 MCP log risk</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 11</span>
+              <div class="slide-title">3-Phase Governance Roadmap</div>
+              <div class="slide-bullets">• Phase 1: Days 1–30 (Immediate containment)<br>• Phase 2: Days 31–90 (Contractual clauses)<br>• Phase 3: Day 90+ (Continuous surveillance)</div>
+            </div>
+            <div class="slide-card">
+              <span class="slide-num">SLIDE 12</span>
+              <div class="slide-title">Deliverables & Live Solution Demo</div>
+              <div class="slide-bullets">• Populated Excel, Diagrams, Rubric<br>• Transition to live web platform<br>• Open for Committee Questions</div>
             </div>
           </div>
         </div>
