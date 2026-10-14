@@ -16,8 +16,8 @@
     filterRisk: 'ALL',
     viewMode: 'cards', // 'cards' | 'table'
     activeDossierId: null,
-    theme: localStorage.getItem('meridian_tprm_theme') || 'dark',
-    completedActions: JSON.parse(localStorage.getItem('meridian_tprm_actions') || '["act-6"]') // default sample closed action
+    theme: localStorage.getItem('meridian_tprm_theme') || 'light',
+    completedActions: (() => { try { return JSON.parse(localStorage.getItem('meridian_tprm_actions') || '[]'); } catch (e) { return []; } })()
   };
 
   // DOM Elements
@@ -524,7 +524,7 @@ Recommended Action: ${vendor['Recommended Action']}`;
 
   function updateActionProgress() {
     const total = elements.actionCheckboxes.length;
-    const closed = state.completedActions.length;
+    const closed = Array.from(elements.actionCheckboxes).filter((cb) => cb.checked).length;
     const pct = total > 0 ? Math.round((closed / total) * 100) : 0;
 
     if (elements.actionProgressBar) {
@@ -570,11 +570,19 @@ Recommended Action: ${vendor['Recommended Action']}`;
       .replace(/'/g, '&#39;');
   }
 
+  // Re-attach behaviour after dashboard_bind.js re-renders tabs from a new pipeline run
+  function rebind() {
+    elements.actionCheckboxes = document.querySelectorAll('.action-check');
+    setupGovernanceTracker();
+    renderInventory();
+  }
+
   // Expose global app methods for inline onclick events
   window.app = {
     openDossier,
     closeDossier,
-    switchTab
+    switchTab,
+    rebind
   };
 
   // Run on DOM Ready

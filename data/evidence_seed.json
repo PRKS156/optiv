@@ -1,0 +1,63 @@
+{
+  "_about": "Analyst-recorded evidence transcribed from the team's workbook (13-10-2026) so the demo runs offline. 'provenance' says how each item was obtained. analyst-recorded items are discounted x0.9 and flagged as NOT machine-verified. Re-run in Live mode to replace them with fetched pages.",
+  "V-000": [
+    {"url": "linkedin.com/posts/larkspur-ceo-ai-assist", "title": "CEO post (benchmark)", "source_class": "exec_statement",
+     "provenance": "benchmark-provided", "retrieved": "09-03-2026",
+     "text": "The post reports an AI upskilling programme reaching more than 400 servicing agents. | Larkspur Assist, an AI application built by the vendor's own engineering team, uses AI agents that draft borrower correspondence, summarise call history and progress routine arrangements without human handoff. | The post refers to leading foundation models without identifying a provider."},
+    {"url": "www.larkspurservicing.example/careers", "title": "Applied AI Engineer - Servicing Automation", "source_class": "job_posting",
+     "provenance": "benchmark-provided", "retrieved": "09-03-2026",
+     "text": "Applied AI Engineer role referencing agent orchestration against live account data and call transcription pipelines."}
+  ],
+  "V-001": [
+    {"url": "www.automworx.com/resources", "title": "Automic Automation V26 & Enterprise AI Operations", "source_class": "vendor_blog",
+     "provenance": "analyst-recorded", "retrieved": "13-10-2026",
+     "text": "Automic V26 workload automation is positioned as an intelligent control plane for enterprise AI operations. | The release introduces native AI Jobs and AI Connection Objects and an embedded context-aware GenAI Automation Assistant for rapid root-cause analysis. | A Bring Your Own Model (BYOM) framework leveraging the Model Context Protocol (MCP) connects external LLMs into enterprise schedulers."},
+    {"url": "https://automation.broadcom.com/blog/automic-v26-establishing-intelligent-control-plane-enterprise-ai",
+     "title": "Automic v26: establishing the intelligent control plane for enterprise AI (supplier's blog; slug only)",
+     "source_class": "vendor_blog", "attribution": "supplier_product", "provenance": "url-verified-via-web-search",
+     "retrieved": "14-10-2026",
+     "text": "Automic v26 establishing intelligent control plane enterprise AI with native AI Jobs, BYOM and MCP support."}
+  ],
+  "V-002": [
+    {"url": "fiserv.com/en/about-fiserv/newsroom.html", "title": "Fiserv Announces Strategic Collaboration with OpenAI and Introduces agentOS",
+     "source_class": "vendor_press", "provenance": "analyst-recorded", "retrieved": "13-10-2026",
+     "text": "Fiserv is collaborating with OpenAI to develop select first-party AI agents on the newly launched agentOS platform, aiming at high-capacity operational workflows across core banking, payments, issuer processing, and servicing. | The platform features a four-layer stack spanning agents, unified governance, model routing, and direct native integration with Fiserv cores and product data."},
+    {"url": "fiserv.com/en/about-fiserv/newsroom.html#microsoft", "title": "Strategic partnership announcement with Microsoft",
+     "source_class": "vendor_press", "provenance": "analyst-recorded", "retrieved": "13-10-2026",
+     "text": "Microsoft strategic partnership announcement details enterprise deployment of Microsoft 365 Copilot, GitHub Copilot, and Microsoft Foundry for Azure-powered custom AI banking applications."},
+    {"url": "https://www.pymnts.com/artificial-intelligence-2/2026/fiserv-and-openai-bring-frontier-ai-to-banks/",
+     "title": "Fiserv and OpenAI Bring Frontier AI to Banks", "source_class": "third_party_media",
+     "provenance": "url-verified-via-web-search", "retrieved": "14-10-2026",
+     "text": "Fiserv and OpenAI Bring Frontier AI to Banks and develop AI agents on the agentOS platform."}
+  ],
+  "V-003": [
+    {"url": "www.fssi-ca.com/security-compliance", "title": "FSSI services, technology and compliance portals (sweep)",
+     "source_class": "vendor_technical_docs", "provenance": "analyst-recorded", "retrieved": "13-10-2026", "pages": 3,
+     "text": "The vendor publishes documentation on its workStreamOne workflow management portal, high-speed automated inserters, variable-data composition tools, and SOC 2 Type 2 and HIPAA security controls."}
+  ],
+  "V-004": [
+    {"url": "www.terrapintech.com/resources", "title": "AI-Ready Data for Wealth Management: Why the Foundation Comes First",
+     "source_class": "vendor_blog", "provenance": "analyst-recorded", "retrieved": "13-10-2026", "pages": 2,
+     "text": "Artificial intelligence can only reason over the data it can access and trust. | The platform consolidates fragmented wealth data stacks into an AI-ready data foundation. | Building this foundation delivers value whether or not the firm ultimately adopts advanced AI tools."}
+  ],
+  "V-005": [
+    {"url": "bny.com/us/en/insights/payments-modernization.html", "title": "BNY payments modernization / Eliza",
+     "source_class": "vendor_press", "provenance": "analyst-recorded", "retrieved": "13-10-2026",
+     "text": "BNY documents its proprietary enterprise AI operating system Eliza as a horizontal, multi-agentic platform. | BNY deploys digital workers and agents built on Eliza to handle routine tasks, such as payment validations and tracking trade settlements."},
+    {"url": "https://www.googlecloudpresscorner.com/2025-12-08-BNY-Collaborates-with-Google-Cloud-to-Advance-its-Eliza-AI-Platform-with-Gemini-Enterprise",
+     "title": "BNY Collaborates with Google Cloud to Advance its Eliza AI Platform with Gemini Enterprise",
+     "source_class": "vendor_press", "provenance": "url-verified-via-web-search", "retrieved": "14-10-2026",
+     "text": "BNY Collaborates with Google Cloud to Advance its Eliza AI Platform with Gemini Enterprise."},
+    {"url": "bny.com (Google Cloud partnership release, as recorded)", "title": "BNY & Google Cloud / Azure OpenAI",
+     "source_class": "vendor_press", "provenance": "analyst-recorded", "retrieved": "13-10-2026",
+     "text": "Gemini Enterprise is deployed into BNY infrastructure for multimodal agentic research and multi-step transaction workflow automation, complemented by Microsoft Azure OpenAI integrations for internal workforce productivity."}
+  ],
+  "V-006": [
+    {"url": "www.theclearinghouse.org (Treasury comment letter, as recorded)", "title": "Comment letter to U.S. Treasury on AML",
+     "source_class": "regulatory_filing", "provenance": "analyst-recorded", "retrieved": "13-10-2026",
+     "text": "Regulatory bodies are encouraged to enable banks to adopt proven emerging technologies, specifically AI and machine learning, to combat financial crimes."},
+    {"url": "www.theclearinghouse.org (RTP / EPN technical specifications, as recorded)", "title": "RTP operating rules & technical specifications",
+     "source_class": "vendor_technical_docs", "provenance": "analyst-recorded", "retrieved": "13-10-2026", "pages": 2,
+     "text": "Clearing and settlement run on deterministic ISO 20022 messaging rules and point-to-point network switches."}
+  ]
+}

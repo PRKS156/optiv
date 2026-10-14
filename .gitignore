@@ -19,3 +19,12 @@ __pycache__/
 # Node / Scratch
 node_modules/
 scratch/
+
+# Findings stay local (brief: no public repo / no publishing)
+evidence_store/
+output/
+
+# deck build artefacts
+deck/node_modules/
+deck/render/
+deck/package-lock.json
