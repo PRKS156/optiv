@@ -1,0 +1,324 @@
+=== SLIDE 1 ===
+
+
+  Optiv Consulting  |  Meridian Financial
+  Vendor AI Usage & Security Risk Analysis
+  An Evidence-Driven, Repeatable OSINT Framework for Third-Party AI Due Diligence
+
+  Prepared by: Optiv Cyber Strategy Consulting Team  •  Engagement: Meridian TPRM AI Governance  •  October 2026
+
+=== SLIDE 2 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  Strategic Context: The Silent AI Proliferation in Banking
+
+
+  The Meridian Challenge
+
+  • Core Banking Dependency: Meridian relies on an extensive vendor ecosystem across core ledgers, real-time payments, reporting, and print operations.
+  • Silent AI Adoption: Vendors are rapidly embedding generative AI and autonomous agents into production workflows without formal disclosure to client risk teams.
+  • TPRM Governance Blindspot: Traditional vendor questionnaires are subjective, point-in-time, and fail to capture rapid continuous AI updates.
+  • Critical Downstream Risks: Unvetted exposure of customer PII to LLMs, reliance on undisclosed sub-processors (OpenAI, Microsoft), and black-box decision models.
+
+
+  The Optiv Solution Framework
+
+  ✔ Objective Public Footprint (OSINT): Examine verifiable technical and regulatory public footprints to uncover real commercial AI capabilities rather than PR commentary.
+  ✔ Deterministic Criticality Scoring: A repeatable 4-factor formula ensures any analyst assigns identical criticality tiers based on data sensitivity and operational dependency.
+  ✔ Tier-Driven Assessment Depth: Assessment depth is governed strictly by vendor criticality tier, maximizing analytical ROI and eliminating wasted investigative effort.
+  ✔ Strict Source Traceability: Verbatim evidence excerpts, cryptographic/timestamped sources, and transparent evidentiary weights keep findings fully auditable.
+
+=== SLIDE 3 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  Functional Design: End-to-End Due Diligence Pipeline
+
+
+  1. INGESTION
+
+  Meridian Vendor Inventory
+  (Excel / CSV Input)
+  • Data Normalization
+  • Scope Validation
+
+
+  2. TRIAGE & DEPTH
+
+  Deterministic Scoring
+  (100-Point Formula)
+  • Critical / High Tier
+  • Moderate / Low Tier
+  • Depth Allocation
+
+
+  3. OSINT HARVEST
+
+  Public Footprint Sweep
+  • Trust Centers & SOC2
+  • SEC 10-K & Filings
+  • API Docs & SDKs
+  • Career Postings
+
+
+  4. SIGNAL & RISK
+
+  Signal Classification
+  • Production AI vs PR
+  • Sub-Processor Mapping
+  • Evidentiary Weighting
+  • AI Risk Classification
+
+
+  5. GOVERNANCE
+
+  Actionable Outputs
+  • Enriched Excel File
+  • Contractual Addenda
+  • Targeted Questionnaires
+  • Working UI Dashboard
+
+=== SLIDE 4 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  System Architecture: Modular Technical Components
+
+
+  Presentation & Client Layer
+
+  ▪ Web Dashboard (Custom UI): Interactive risk exploration, Excel file upload, filtering & search
+  ▪ Analyst CLI / Colab Notebook: Automated batch processing pipeline & data science workflows
+  ▪ Report Generation Engine: Automated export to Meridian offline Excel & executive presentations
+
+
+  Processing & Intelligence Services
+
+  ▪ Ingestion & Triage Service: Excel/CSV parsing, data validation, deterministic criticality scoring engine
+  ▪ OSINT Harvester & Crawler Cluster: Domain crawler, headless browser rendering, rate-limited ethical scraper
+  ▪ NLP & Signal Extraction Agent: Multi-pass LLM & regex entity extractor for AI frameworks, SDKs & models
+  ▪ Evidentiary Scoring & Risk Matrix: Algorithmic weighting engine mapping signal strength to Meridian AI Risk Tiers
+
+
+  Secure Persistence & Audit Store
+
+  ▪ Relational Database: Vendor profiles, criticality scores, audit logs, and risk classifications
+  ▪ Verifiable Evidence Store: Cryptographic hashes, timestamped screenshots, and raw source text archives
+  ▪ Enterprise RBAC & Security: Zero data retention on public LLMs; strict tenant boundary isolation
+
+=== SLIDE 5 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  Vendor Criticality: 100-Point Deterministic Framework
+
+
+  Objective 4-Factor Rubric
+
+  1. Data Sensitivity Accessed (Max 30 pts)
+  30 = Full customer master/balances/tax IDs; 20 = System credentials/config or wealth client data; 15 = Payment messages in transit; 0 = Public.
+  2. Operational Dependency (Max 30 pts)
+  30 = Critical (core operations halt immediately); 20 = High (daily clearing/batch degraded); 10 = Moderate (monthly cycles withstand delay).
+  3. Payment Flow & Rail Involvement (Max 20 pts)
+  20 = Systemic national clearing rail (ACH/RTP); 15 = Live core transactional ledger or real-time payment gateway; 5 = Batch scheduling.
+  4. Volume & Regulatory Scrutiny (Max 20 pts)
+  20 = >100M txns, bank-wide scale; 15 = >10M msgs/docs or IRS tax filings; 10 = Millions of msgs; 5 = Monthly wealth batches.
+
+
+  Criticality-Driven Assessment Depth
+
+  CRITICAL TIER (Score 80–100) -> Forensic Review
+  Full OSINT sweep across trust portals, sub-processor registers, SEC 10-K filings, API developer docs, executive channels, plus mandatory vendor questionnaire.
+  HIGH TIER (Score 60–79) -> Targeted Technical Review
+  Investigate service line architecture, engineering job listings, trust center certifications, and targeted AI addendum in contracts.
+  MODERATE TIER (Score 40–59) -> Standard OSINT Verification
+  Primary web domain, product specification sheets, privacy disclosures, and blog/thought-leadership cross-checking for production reality.
+  LOW TIER (Score <40) -> Surface Scan
+  Standard baseline review of commercial terms and public trust overview. Avoid wasteful over-investigation.
+
+=== SLIDE 6 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  Source Strategy: Evidentiary Weighting & False-Positive Filtering
+
+
+  Tier 1
+
+  Weight: 0.90 – 1.00
+  • Official Trust Centers & Sub-processor Registers
+  • SEC Filings (10-K, 10-Q Item 1A Risk Disclosures)
+  • Technical API Documentation, SDK Guides & Release Notes
+  • SOC 2 Type II System Description & ISO 27001 Annexes
+
+
+  Tier 2
+
+  Weight: 0.70 – 0.85
+  • Technical Job Postings (Applied AI / LLM Orchestration)
+  • Public Developer Repositories, PyPI/npm Packages & SDKs
+  • Technical Engineering Whitepapers & Patent Filings
+  • Developer Community Q&A (StackOverflow, GitHub Issues)
+
+
+  Tier 3
+
+  Weight: 0.50 – 0.65
+  • C-Suite Verified Announcements (e.g. CEO LinkedIn Posts)
+  • Official Corporate Press Releases announcing AI partnerships
+  • Commercial Product Launch Webinars & Keynote Briefings
+  • Requires cross-referencing with Tier 1/2 for technical confirmation
+
+
+  Tier 4
+
+  Weight: 0.10 – 0.30 (Discounted)
+  • General Blog Posts discussing 'The Future of AI in Finance'
+  • Sales Collateral claiming 'AI-Powered Insights' without architecture
+  • Educational Articles on emerging technology trends
+  • RULE: Treated as Inconclusive/Negative for production AI risk
+
+=== SLIDE 7 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  Portfolio Overview: Criticality & AI Risk Assessment Findings
+
+=== SLIDE 8 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  Deep Dive: Fiserv, Inc. (DNA Core Platform) — Critical Risk
+
+
+  Verified Evidence Footprint
+
+  ✔ Primary Evidence (Fiserv Corporate):
+  "Fiserv established a strategic collaboration with OpenAI to integrate frontier AI into banking operations, building autonomous agents on Fiserv's agentOS platform to handle operational workflows and core banking conversions."
+  ✔ Supporting Evidence (Microsoft Azure AI):
+  "Fiserv utilizes Microsoft Azure AI Foundry and GitHub Copilot to process billions of tokens, integrating generative AI directly across client-servicing and transaction-processing infrastructure."
+  ✔ Supporting Evidence (Cognition AI):
+  Partnership deploying autonomous software engineering systems (Devin) across core banking codebases.
+
+
+  Meridian Impact & Governance Mandate
+
+  ⚠ Direct PII & Ledger Exposure:
+  Full customer master, balances, and account records for 1.4M customers processed in DNA risk exposure to frontier LLMs via agentOS.
+  ⚠ Undisclosed Sub-Processors:
+  OpenAI, Microsoft Azure AI, Cognition AI, and UiPath acting as AI sub-processors without explicit Meridian contractual addenda.
+  ⚠ Immediate Governance Action:
+  1) Issue targeted AI questionnaire within 15 days; 2) Demand written zero-data-retention and zero-training guarantees from OpenAI/Microsoft; 3) Secure contractual right to disable autonomous agents in Meridian tenant.
+
+=== SLIDE 9 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  Deep Dive: BNY & The Clearing House — Real-Time Payment AI
+
+
+  V-005: BNY (Global Payments)
+
+  • Operational Profile: Transmits inbound Real-Time Payments (2.1M messages/yr). Critical operational dependency; 24/7/365 availability requirement.
+  • Verified AI Footprint: BNY deploys AI-enabled anomaly detection and intelligent payment routing dynamically directing payments across RTP, FedNow, and ACH.
+  • Named Model Infrastructure: Internal BNY AI Hub ('Eliza platform') + Google Cloud Gemini Enterprise & Microsoft Azure AI.
+  • AI Security Risk: HIGH: Automated blocking, false positives, or black-box routing on live financial messages without full Meridian visibility.
+  • Recommended Action: Request BNY AI Governance Whitepaper; verify human-in-the-loop exception thresholds and Azure data-sharing boundaries.
+
+
+  V-006: The Clearing House (ACH & RTP)
+
+  • Operational Profile: National core clearing and settlement infrastructure (14M messages). Total operational dependency; systemic banking partner.
+  • Verified AI Footprint: Core clearing and settlement switches run strictly on deterministic ISO 20022 rules without generative AI or autonomous agents. (TCH advocates AI adoption for participant bank fraud screening).
+  • Named Model Infrastructure: Consortium proprietary machine learning models + cybersecurity analytics partners (FICO / LexisNexis).
+  • AI Security Risk: NONE IDENTIFIED IN CORE TRANSIT: Payment messages pass in transit through secure deterministic rails with no LLM sub-processor exposure.
+  • Recommended Action: Review RTP participant fraud scoring rules; confirm model update change notices and participant exception handling protocols.
+
+=== SLIDE 10 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  Nuanced Profiles: Filtering Marketing Hype vs. Real Risk
+
+
+  V-003: FSSI (Document & Comm.)
+
+  MARKETING COMMENTARY DEBUNKED
+  ▪ Data Exposure: High (Names, SSNs, balances across 19M docs).
+  ▪ Public Claims: Blogs praise AI & ML for personalization.
+  ▪ Technical Reality: Production engine uses deterministic, rule-based variable composition. Zero AI/LLM models in statement pipeline.
+  ▪ Risk & Action: NONE IDENTIFIED AI Risk. Maintain SOC 2 Type 2 oversight; insert advance notification clause for future AI adoption.
+
+
+  V-004: Terrapin Tech (Reporting)
+
+  AI-READY DATA ARCHITECTURE (ETL)
+  ▪ Data Exposure: Wealth holdings & advisor compensation (38k clients).
+  ▪ Public Claims: 'AI-Ready Data' blogs + Terrapin Enterprise SLMs.
+  ▪ Technical Reality: Provides structured ETL data aggregation for 38k wealth accounts. Inconclusive whether native algorithms or copilots exist in comp engine.
+  ▪ Risk & Action: LOW AI Risk. Inquire during annual review cycle; contractually prohibit using Meridian data for model training or benchmarking.
+
+
+  V-001: AutomWorx (Services)
+
+  PRIVILEGED INFRASTRUCTURE & BYOM
+  ▪ Data Exposure: Privileged credentials & production job schedules.
+  ▪ Public Claims: Articles emphasize workload orchestration for AI pipelines.
+  ▪ Technical Reality: Manages core batch schedules; Automic V26 introduces GenAI assistant and Bring-Your-Own-Model (BYOM) via Model Context Protocol (MCP).
+  ▪ Risk & Action: HIGH AI Risk. Issue targeted questionnaire within 15 days; strictly ban proprietary batch script or credential ingestion into external LLMs.
+
+=== SLIDE 11 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  TPRM Governance Roadmap: Actionable Next Steps for Meridian
+
+
+  Phase 1: Immediate Containment (Days 1–30)
+
+  ✔  Issue Targeted AI Questionnaires to Fiserv and BNY immediately.
+  ✔  Register OpenAI and Microsoft Azure AI on Meridian's AI Sub-processor Register.
+  ✔  Obtain written zero-retention / zero-training guarantees from Fiserv for core ledger data.
+  ✔  Establish human-in-the-loop escalation thresholds for BNY real-time payment routing.
+
+
+  Phase 2: Contractual Remediation (Days 31–90)
+
+  ✔  Mandate standard AI Clauses in upcoming contract renewal cycles across all High/Critical vendors.
+  ✔  Incorporate strict sub-processor change notification requirements with 30-day prior opt-out rights.
+  ✔  Establish explicit prohibition against using Meridian data for public model training or fine-tuning.
+  ✔  Require SOC 2 Type II reports covering AI security controls and model governance.
+
+
+  Phase 3: Continuous Monitoring & Automation (Day 90+)
+
+  ✔  Operationalize Optiv OSINT automated crawler to monitor vendor trust portals and job postings quarterly.
+  ✔  Implement automated change alerts when vendors announce new AI partnerships or sub-processors.
+  ✔  Integrate AI Security Risk scores into Meridian's Third-Party Risk Committee executive dashboard.
+
+=== SLIDE 12 ===
+
+  CASE STUDY 1 · VENDOR AI USAGE ANALYSIS
+
+  Summary & Live Solution Demonstration
+
+
+  Deliverables Summary Checklist
+
+  ✅ Completed Offline Excel File: Meridian_Vendor_Input.xlsx fully populated with verified findings for V-001 through V-006 matching the V-000 benchmark.
+  ✅ Functional Design Diagram: Documented 5-stage data flow from OSINT collection to risk output.
+  ✅ System Architecture Diagram: Modular microservice architecture demonstrating ingest, extraction, and evaluation.
+  ✅ Deterministic Criticality Ratings: Objective 100-point rubric applied consistently to all 6 vendors.
+  ✅ Working Interactive Solution: Custom UI web application & Jupyter/Colab notebook for live vendor due diligence.
+
+
+  Next Step: Live Interactive Walkthrough
+
+  Transitioning to Working Demonstration Tool
+  ▶ File Ingestion Engine: Upload and validate raw Meridian Excel files dynamically.
+  ▶ Interactive Scoring Matrix: Live calculation of criticality tiers based on data sensitivity and dependency.
+  ▶ OSINT Intelligence Cards: Deep drill-down into verbatim quotes, source links, and sub-processor maps.
+  ▶ Risk Classification & Export: Instant visual risk classification and 1-click enriched Excel export.
+  Thank you! Open for Questions.
+
